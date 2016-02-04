@@ -1,8 +1,8 @@
 def monstro_flores_inic_facil():
-    import random
+
     monstro_selec=0
     nome=''
-    #nos mnstros [NOME ,NIVEL, VIDA, ATAQUE, DEFESA, EXP, GOLD]
+    #nos mnstros [NIVEL, VIDA, ATAQUE, DEFESA, EXP, GOLD]
     cao_selvagem=[ 2, 15, 6, 2, 10, 20]#5
     serpente=[1, 10, 5, 0, 5, 15]#4
     lobo_filhote=[ 2, 20, 6, 3, 15, 20]#5
@@ -29,6 +29,7 @@ def monstro_flores_inic_facil():
         nomemonstro='Rei Macaco'
         return (nomemonstro, macaco_ancestral)
 def floresta_iniciante():
+    import random
     global hp
     global mana
     global ataque
@@ -37,11 +38,11 @@ def floresta_iniciante():
     global ptlv
     global exp
     global gold
-    import random
     op_continuar=1
     atk=0
     monstro=[]
     goldwin=0
+    defm=0
     nome_monstro=''
     op_iniciar=input ('Iniciar? \n 1 - SIM \n 2 - NAO\n ')
     if op_iniciar==1:
@@ -50,18 +51,23 @@ def floresta_iniciante():
             print ' Voce esta andando pela floresta e encontra um(a) ', nome_monstro, ' Nivel ', monstro[0]
             print ' O Combate vai comecar!'
             #nos monstros [NIVEL, VIDA, ATAQUE, DEFESA, EXP, GOLD]
-            while monstro[2]>0:
+            while monstro[1]>0:
                 acao=input (' E o seu turno, O que ira fazer? \n 1 - Atacar fisicamente\n 2 - Atacar com Magia\n 3 - Se Curar\n')
                 if acao==1:
-                    atk=random.randint(monstro[4],ataque)
-                    monstro[2]=monstro[2]-atk
+                    #ataque=int(ataque)
+                    #defm=int(monstro[4])
+                    atk=random.randint(monstro[3],ataque)
+                    monstro[1]=monstro[1]-atk
                     print 'Voce deu ',(atk),' de dano, agora', nome_monstro,' possui', monstro[2], ' de vida\n'
                     print ' E o turno de', nome_monstro
-                    atk=random.randint(defesa,monstro[3])
+                    #atk=int(monstro[2])
+                    #defesa=int(defesa)
+                    atk=random.randint(defesa,monstro[2])
                     hp=hp-atk
                     print nome_monstro,' Ataca e voce perde', atk,' de vida\n'
-            exp=exp+monstro[5]
-            goldwin=random.randint(1,monstro[6])
+            exp=exp+monstro[4]
+            atk=monstro[5]
+            goldwin=random.randint(1,atk)
             gold=gold+goldwin
             print 'Voce ganhou ', goldwin,' de GOLD por matar', nome_monstro
             if exp>=50:
@@ -96,7 +102,7 @@ def inventario(character1):
     if len(vault)==0:
         print ' Inventario Vazio'
     else:
-        print 'Este e o invetario de ', character1
+        print 'Este e o inventario de ', character1
         for i in range (len(vault)):
             print i+1, ' ', vault[i]
         op_item=input('Deseja utilizar algum item? 1 = Sim       2 = Nao    ')
@@ -200,4 +206,5 @@ exp=0
 gold=0
 lv = 0
 vault=0
+import random
 menu()
