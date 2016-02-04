@@ -62,6 +62,8 @@ def floresta_iniciante():
                     #defm=int(monstro[4])
                 atk=random.randint(monstro[3],ataque)
                 monstro[1]=monstro[1]-atk
+                if atk==ataque-monstro[3]:
+                    print ' Critical Hit!!!'
                 print 'Voce deu ',(atk),' de dano, agora', nome_monstro,' possui', monstro[1], ' de vida\n'
                 if monstro[1]>0:
                     print ' E o turno de', nome_monstro
@@ -70,6 +72,11 @@ def floresta_iniciante():
                     atk=random.randint(defesa,monstro[2])
                     hp=hp-atk
                     print nome_monstro,' Ataca e voce perde', atk,' de vida\n'
+                    if hp<=0:
+                        print ' Voce morreu, retornando pra cidade\n'                        
+                        
+                              
+                    print ' Voce possui ', hp, ' de vida'
         exp=exp+monstro[4]
         atk=monstro[5]
         goldwin=random.randint(1,atk)
@@ -85,10 +92,11 @@ def floresta_iniciante():
         op_continuar=input(' Deseja continuar? \n 1 - SIM\n 2 - NAO      ')
     return 0
 def combate():
-    print '\n\n 1 - Floresta do Iniciante\n 2 - Cabana Abandonada\n 3 - Cemiterio Amaldicoado'
-    print ' 4 - Deserto Escaldante\n 5 - Cidade Perdida\n 6 - Cancelar\n '
-    op_combate = input ('  Voce entrou no modo de combate, por favor selecione o local onde ira cacar\n')
+    op_combate=0
     while op_combate !=6:
+        print '\n\n 1 - Floresta do Iniciante\n 2 - Cabana Abandonada\n 3 - Cemiterio Amaldicoado'
+        print ' 4 - Deserto Escaldante\n 5 - Cidade Perdida\n 6 - Cancelar\n '
+        op_combate = input ('  Voce entrou no modo de combate, por favor selecione o local onde ira cacar\n')
         if op_combate==1:
             floresta_iniciante()
         elif op_combate==2:
