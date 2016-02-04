@@ -1,1 +1,203 @@
+def monstro_flores_inic_facil():
+    import random
+    monstro_selec=0
+    nome=''
+    #nos mnstros [NOME ,NIVEL, VIDA, ATAQUE, DEFESA, EXP, GOLD]
+    cao_selvagem=[ 2, 15, 6, 2, 10, 20]#5
+    serpente=[1, 10, 5, 0, 5, 15]#4
+    lobo_filhote=[ 2, 20, 6, 3, 15, 20]#5
+    lobo=[ 3, 20, 8, 4, 20, 25]#3
+    aranha=[ 2, 15, 4, 1, 8, 20]#5
+    macaco_ancestral=[ 5, 35, 12, 6, 30, 40]#2
+    monstro_selec=random.randint(1,26)
+    if monstro_selec>=1 and monstro_selec<6:
+        nomemonstro='Cao Selvagem'
+        return (nomemonstro, cao_selvagem)
+    elif monstro_selec>=6 and monstro_selec<10:
+        nomemonstro='Serpente'
+        return (nomemonstro ,serpente)
+    elif monstro_selec>=10 and monstro_selec<16:
+        nomemonstro='Filhote de Lobo'
+        return (nomemonstro ,lobo_filhote)
+    elif monstro_selec>=16 and monstro_selec<20:
+        nomemonstro='Lobo'
+        return (nomemonstro, lobo)
+    elif monstro_selec>=20 and monstro_selec<26:
+        nomemonstro='Aranha'
+        return (nomemonstro, aranha)
+    else:
+        nomemonstro='Rei Macaco'
+        return (nomemonstro, macaco_ancestral)
+def floresta_iniciante():
+    global hp
+    global mana
+    global ataque
+    global defesa
+    global lv
+    global ptlv
+    global exp
+    global gold
+    import random
+    op_continuar=1
+    atk=0
+    monstro=[]
+    goldwin=0
+    nome_monstro=''
+    op_iniciar=input ('Iniciar? \n 1 - SIM \n 2 - NAO\n ')
+    if op_iniciar==1:
+        while op_continuar==1:
+            nome_monstro, monstro=monstro_flores_inic_facil()
+            print ' Voce esta andando pela floresta e encontra um(a) ', nome_monstro, ' Nivel ', monstro[0]
+            print ' O Combate vai comecar!'
+            #nos monstros [NIVEL, VIDA, ATAQUE, DEFESA, EXP, GOLD]
+            while monstro[2]>0:
+                acao=input (' E o seu turno, O que ira fazer? \n 1 - Atacar fisicamente\n 2 - Atacar com Magia\n 3 - Se Curar\n')
+                if acao==1:
+                    atk=random.randint(monstro[4],ataque)
+                    monstro[2]=monstro[2]-atk
+                    print 'Voce deu ',(atk),' de dano, agora', nome_monstro,' possui', monstro[2], ' de vida\n'
+                    print ' E o turno de', nome_monstro
+                    atk=random.randint(defesa,monstro[3])
+                    hp=hp-atk
+                    print nome_monstro,' Ataca e voce perde', atk,' de vida\n'
+            exp=exp+monstro[5]
+            goldwin=random.randint(1,monstro[6])
+            gold=gold+goldwin
+            print 'Voce ganhou ', goldwin,' de GOLD por matar', nome_monstro
+            if exp>=50:
+                print ' Voce passou de nivel e ganhou 4 Pontos de Caracteristica'
+                exp=0
+            op_continuar=input(' Deseja continuar? \n 1 - SIM\n 2 - NAO      ')
 
+
+
+def combate():
+    print '\n\n 1 - Floresta do Iniciante\n 2 - Cabana Abandonada\n 3 - Cemiterio Amaldicoado'
+    print ' 4 - Deserto Escaldante\n 5 - Cidade Perdida\n 6 - Cancelar\n '
+    op_combate = input ('  Voce entrou no modo de combate, por favor selecione o local onde ira cacar\n')
+    while op_combate !=6:
+        if op_combate==1:
+            floresta_iniciante()
+        elif op_combate==2:
+            cabana_abandonada()
+        elif op_combate==3:
+            cemiterio_amaldi()
+        elif op_combate==4:
+            deserto_escald()
+        elif op_combate==5:
+            cidade_perdida()
+        elif op_combate==6:
+            menu()
+        else:
+            print 'Opcao Invalida'
+
+def inventario(character1):
+    global vault
+    if len(vault)==0:
+        print ' Inventario Vazio'
+    else:
+        print 'Este e o invetario de ', character1
+        for i in range (len(vault)):
+            print i+1, ' ', vault[i]
+        op_item=input('Deseja utilizar algum item? 1 = Sim       2 = Nao    ')
+        while 0< op_item >3:
+            if op_item==1:
+                uso_item()
+            else:
+                menu()
+def personagem(character1):
+    global hp
+    global mana
+    global ataque
+    global defesa
+    global lv
+    global ptlv
+    global exp
+    global gold
+    print 'Caracteristicas de ', character1
+    print 'Nivel = ', lv
+    print 'VIDA = ', hp
+    print 'MANA = ', mana
+    print 'Ataque = ', ataque
+    print 'Defesa = ', defesa
+    print 'Experiencia = ', exp
+    print 'GOLD = ', gold
+    print 'Experiencia necessaria para o proximo nivel = ', (50-exp)
+    while ptlv > 0:
+        print 'Voce tem pontos de nivel disponivel, por favor distribua-os'
+        print '             1 - HP \n             2 - MANA \n             3 - Ataque \n             4 - Defesa \n             Pontos = ',ptlv
+        op_pontos=input('Onde deseja adicionar seus pontos?      ')
+        if op_pontos==1:
+            if ptlv>0:
+                op_pontos2=input ('\n Quantos?    ')
+                if op_pontos2>ptlv or op_pontos2<0:
+                    print  'Quantidade invalida'
+                else:
+                    hp=hp+op_pontos2*3
+                    ptlv=ptlv-op_pontos2
+                    print ' Adicionado com Sucesso '
+        elif op_pontos==2:
+            if ptlv>0:
+                op_pontos2=input ('\n Quantos?')
+                if op_pontos2>ptlv or op_pontos2<0:
+                    print  'Quantidade invalida'
+                else:
+                    mana=mana+op_pontos2*2
+                    ptlv=ptlv-op_pontos2
+                    print ' Adicionado com Sucesso '
+        elif op_pontos==3:
+            if ptlv>0:
+                op_pontos2=input ('\n Quantos?')
+                if op_pontos2>ptlv or op_pontos2<0:
+                    print  'Quantidade invalida'
+                else:
+                    ataque=ataque+op_pontos2
+                    ptlv=ptlv-op_pontos2
+                    print ' Adicionado com Sucesso\n\n\n '
+        elif op_pontos==4:
+            if ptlv>0:
+                op_pontos2=input ('\n Quantos?')
+                if op_pontos2>ptlv or op_pontos2<0:
+                    print  'Quantidade invalida\n'
+                else:
+                    defesa=defesa+op_pontos2
+                    ptlv=ptlv-op_pontos2
+                    print ' Adicionado com Sucesso \n \n '
+
+
+
+def menu():
+    op=0
+    while op !=5:
+        print ' 1 - Inventario'
+        print ' 2 = Personagem'
+        print ' 3 = Combate'
+        print ' 4 = Historia'
+        print ' 5 = Sair'
+        op=input('Digite uma opcao ')
+        if op==1:
+            inventario(character1)
+        elif op==2:
+            personagem(character1)
+        elif op==3:
+            combate()
+        #elif op==4:
+            #historia()
+        else:
+            print ' Errrou'
+
+vault=[]
+print ' Ola jogadores \n Bem vindos a mais um jogo de TESTE'
+character1=raw_input (' Digite o nome do seu personagem :  ')
+print 'Seja bem vindo ',character1
+
+hp = 50
+mana = 30
+ataque = 10
+defesa = 3
+ptlv = 5
+exp=0
+gold=0
+lv = 0
+vault=0
+menu()
