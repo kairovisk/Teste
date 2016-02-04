@@ -1,4 +1,4 @@
-def monstro_flores_inic_facil():
+def monstro_flores_inic_facil(repeat):
 
     monstro_selec=0
     nome=''
@@ -9,6 +9,9 @@ def monstro_flores_inic_facil():
     lobo=[ 3, 20, 8, 4, 20, 25]#3
     aranha=[ 2, 15, 4, 1, 8, 20]#5
     macaco_ancestral=[ 5, 35, 12, 6, 30, 40]#2
+    if repeat==5:
+        nomemonstro='Rei Macaco'
+        return (nomemonstro, macaco_ancestral)
     monstro_selec=random.randint(1,26)
     if monstro_selec>=1 and monstro_selec<6:
         nomemonstro='Cao Selvagem'
@@ -22,12 +25,9 @@ def monstro_flores_inic_facil():
     elif monstro_selec>=16 and monstro_selec<20:
         nomemonstro='Lobo'
         return (nomemonstro, lobo)
-    elif monstro_selec>=20 and monstro_selec<26:
+    else:
         nomemonstro='Aranha'
         return (nomemonstro, aranha)
-    else:
-        nomemonstro='Rei Macaco'
-        return (nomemonstro, macaco_ancestral)
 def floresta_iniciante():
     import random
     global hp
@@ -39,46 +39,51 @@ def floresta_iniciante():
     global exp
     global gold
     op_continuar=1
+    op_iniciar=1
     atk=0
     monstro=[]
     goldwin=0
     defm=0
     nome_monstro=''
-    op_iniciar=input ('Iniciar? \n 1 - SIM \n 2 - NAO\n ')
-    if op_iniciar==1:
-        while op_continuar==1:
-            nome_monstro, monstro=monstro_flores_inic_facil()
+    repeat=0
+    while op_continuar==1:
+        repeat=repeat+1
+        nome_monstro, monstro=monstro_flores_inic_facil(repeat)
+        if repeat==5:
+            print'Voce encontrou o terrivel ', nome_monstro,' ele contem itens bons'
+        else:
             print ' Voce esta andando pela floresta e encontra um(a) ', nome_monstro, ' Nivel ', monstro[0]
             print ' O Combate vai comecar!'
             #nos monstros [NIVEL, VIDA, ATAQUE, DEFESA, EXP, GOLD]
-            while monstro[1]>0:
-                acao=input (' E o seu turno, O que ira fazer? \n 1 - Atacar fisicamente\n 2 - Atacar com Magia\n 3 - Se Curar\n')
-                if acao==1:
+        while monstro[1]>0:
+            acao=input (' E o seu turno, O que ira fazer? \n 1 - Atacar fisicamente\n 2 - Atacar com Magia\n 3 - Se Curar\n')
+            if acao==1:
                     #ataque=int(ataque)
                     #defm=int(monstro[4])
-                    atk=random.randint(monstro[3],ataque)
-                    monstro[1]=monstro[1]-atk
-                    print 'Voce deu ',(atk),' de dano, agora', nome_monstro,' possui', monstro[1], ' de vida\n'
-                    if monstro[1]>0:
-                        print ' E o turno de', nome_monstro
+                atk=random.randint(monstro[3],ataque)
+                monstro[1]=monstro[1]-atk
+                print 'Voce deu ',(atk),' de dano, agora', nome_monstro,' possui', monstro[1], ' de vida\n'
+                if monstro[1]>0:
+                    print ' E o turno de', nome_monstro
                         #atk=int(monstro[2])
                         #defesa=int(defesa)
-                        atk=random.randint(defesa,monstro[2])
-                        hp=hp-atk
-                        print nome_monstro,' Ataca e voce perde', atk,' de vida\n'
-            exp=exp+monstro[4]
-            atk=monstro[5]
-            goldwin=random.randint(1,atk)
-            gold=gold+goldwin
-            print ' Voce ganhou ', goldwin,' de GOLD por matar', nome_monstro
-            print ' Voce possui ', hp, ' de vida'
-            if exp>=50:
-                print ' Voce passou de nivel e ganhou 4 Pontos de Caracteristica'
-                exp=0
-            op_continuar=input(' Deseja continuar? \n 1 - SIM\n 2 - NAO      ')
-
-
-
+                    atk=random.randint(defesa,monstro[2])
+                    hp=hp-atk
+                    print nome_monstro,' Ataca e voce perde', atk,' de vida\n'
+        exp=exp+monstro[4]
+        atk=monstro[5]
+        goldwin=random.randint(1,atk)
+        gold=gold+goldwin
+        print ' Voce ganhou ', goldwin,' de GOLD por matar', nome_monstro
+        print ' Voce possui ', hp, ' de vida'
+        if exp>=50:
+            print ' Voce passou de nivel e ganhou 3 Pontos de Caracteristica'
+            ptlv=ptlv+3
+            exp=0
+        if repeat==5:
+            repeat=0
+        op_continuar=input(' Deseja continuar? \n 1 - SIM\n 2 - NAO      ')
+    return 0
 def combate():
     print '\n\n 1 - Floresta do Iniciante\n 2 - Cabana Abandonada\n 3 - Cemiterio Amaldicoado'
     print ' 4 - Deserto Escaldante\n 5 - Cidade Perdida\n 6 - Cancelar\n '
@@ -95,7 +100,7 @@ def combate():
         elif op_combate==5:
             cidade_perdida()
         elif op_combate==6:
-            menu()
+            return 0
         else:
             print 'Opcao Invalida'
 
