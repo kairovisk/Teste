@@ -58,18 +58,20 @@ def floresta_iniciante():
                     #defm=int(monstro[4])
                     atk=random.randint(monstro[3],ataque)
                     monstro[1]=monstro[1]-atk
-                    print 'Voce deu ',(atk),' de dano, agora', nome_monstro,' possui', monstro[2], ' de vida\n'
-                    print ' E o turno de', nome_monstro
-                    #atk=int(monstro[2])
-                    #defesa=int(defesa)
-                    atk=random.randint(defesa,monstro[2])
-                    hp=hp-atk
-                    print nome_monstro,' Ataca e voce perde', atk,' de vida\n'
+                    print 'Voce deu ',(atk),' de dano, agora', nome_monstro,' possui', monstro[1], ' de vida\n'
+                    if monstro[1]>0:
+                        print ' E o turno de', nome_monstro
+                        #atk=int(monstro[2])
+                        #defesa=int(defesa)
+                        atk=random.randint(defesa,monstro[2])
+                        hp=hp-atk
+                        print nome_monstro,' Ataca e voce perde', atk,' de vida\n'
             exp=exp+monstro[4]
             atk=monstro[5]
             goldwin=random.randint(1,atk)
             gold=gold+goldwin
-            print 'Voce ganhou ', goldwin,' de GOLD por matar', nome_monstro
+            print ' Voce ganhou ', goldwin,' de GOLD por matar', nome_monstro
+            print ' Voce possui ', hp, ' de vida'
             if exp>=50:
                 print ' Voce passou de nivel e ganhou 4 Pontos de Caracteristica'
                 exp=0
