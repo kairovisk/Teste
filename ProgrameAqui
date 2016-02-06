@@ -2,6 +2,9 @@
 #aperfeiçoamento do menu - criação da cidade e submenus
 #criação da DEF CURAR (), Aperfeiçoamento da função que 'abre' o codigo
 
+#NECESSARIO
+#OLHAR LINHAS 222, 223 E 224, CRIAR NOVAS FUNÇOES PARA CADA UM
+#MONSTROS PARA AS PROXIMAS FASES
 
 def monstro_flores_inic_facil(repeat):
 
@@ -35,14 +38,7 @@ def monstro_flores_inic_facil(repeat):
         return (nomemonstro, aranha)
 def floresta_iniciante():
     import random
-    global hp
-    global mana
-    global ataque
-    global defesa
-    global lv
-    global ptlv
-    global exp
-    global gold
+    global hp,mana,ataque,defesa,lv,ptlv,exp,gold,character1
     op_continuar=1
     op_iniciar=1
     atk=0
@@ -78,9 +74,9 @@ def floresta_iniciante():
                     hp=hp-atk
                     print nome_monstro,' Ataca e voce perde', atk,' de vida\n'
                     if hp<=0:
-                        print ' Voce morreu, retornando pra cidade\n'                        
-                        
-                              
+                        print ' Voce morreu, retornando para o Templo\n'
+                        curar()
+
                     print ' Voce possui ', hp, ' de vida'
         exp=exp+monstro[4]
         atk=monstro[5]
@@ -117,56 +113,52 @@ def combate():
         else:
             print 'Opcao Invalida'
 
-def inventario(character1):
-    global vault
+def inventario():
+    global vault,character1
     if len(vault)==0:
+        print ' GOLD = ',gold
         print ' Inventario Vazio'
     else:
-        print 'Este e o inventario de ', character1
+        print ' Este e o inventario de ', character1
+        print ' GOLD = ',gold
         for i in range (len(vault)):
             print i+1, ' ', vault[i]
-        op_item=input('Deseja utilizar algum item? 1 = Sim       2 = Nao    ')
+        op_item=input(' Deseja utilizar algum item? 1 = Sim       2 = Nao    ')
         while 0< op_item >3:
             if op_item==1:
                 uso_item()
             else:
                 menu()
-def personagem(character1):
-    global hp
-    global mana
-    global ataque
-    global defesa
-    global lv
-    global ptlv
-    global exp
-    global gold
-    print 'Caracteristicas de ', character1
-    print 'Nivel = ', lv
-    print 'VIDA = ', hp
-    print 'MANA = ', mana
-    print 'Ataque = ', ataque
-    print 'Defesa = ', defesa
-    print 'Experiencia = ', exp
-    print 'GOLD = ', gold
-    print 'Experiencia necessaria para o proximo nivel = ', (50-exp)
+def personagem():
+    global hp,mana,ataque,defesa,lv,ptlv,exp,gold,character1,hpmax
+    print ' Caracteristicas de ', character1
+    print ' Nivel = ', lv
+    print ' VIDA = ', hp
+    print ' MANA = ', mana
+    print ' Ataque = ', ataque
+    print ' Defesa = ', defesa
+    print ' Experiencia = ', exp
+    print ' GOLD = ', gold
+    print ' Experiencia necessaria para o proximo nivel = ', (50-exp)
     while ptlv > 0:
-        print 'Voce tem pontos de nivel disponivel, por favor distribua-os'
+        print ' Voce tem pontos de nivel disponivel, por favor distribua-os'
         print '             1 - HP \n             2 - MANA \n             3 - Ataque \n             4 - Defesa \n             Pontos = ',ptlv
-        op_pontos=input('Onde deseja adicionar seus pontos?      ')
+        op_pontos=input(' Onde deseja adicionar seus pontos?      ')
         if op_pontos==1:
             if ptlv>0:
                 op_pontos2=input ('\n Quantos?    ')
                 if op_pontos2>ptlv or op_pontos2<0:
-                    print  'Quantidade invalida'
+                    print  ' Quantidade invalida'
                 else:
                     hp=hp+op_pontos2*3
+                    hpmax=hp
                     ptlv=ptlv-op_pontos2
                     print ' Adicionado com Sucesso '
         elif op_pontos==2:
             if ptlv>0:
                 op_pontos2=input ('\n Quantos?')
                 if op_pontos2>ptlv or op_pontos2<0:
-                    print  'Quantidade invalida'
+                    print  ' Quantidade invalida'
                 else:
                     mana=mana+op_pontos2*2
                     ptlv=ptlv-op_pontos2
@@ -175,7 +167,7 @@ def personagem(character1):
             if ptlv>0:
                 op_pontos2=input ('\n Quantos?')
                 if op_pontos2>ptlv or op_pontos2<0:
-                    print  'Quantidade invalida'
+                    print  ' Quantidade invalida'
                 else:
                     ataque=ataque+op_pontos2
                     ptlv=ptlv-op_pontos2
@@ -184,11 +176,71 @@ def personagem(character1):
             if ptlv>0:
                 op_pontos2=input ('\n Quantos?')
                 if op_pontos2>ptlv or op_pontos2<0:
-                    print  'Quantidade invalida\n'
+                    print  ' Quantidade invalida\n'
                 else:
                     defesa=defesa+op_pontos2
                     ptlv=ptlv-op_pontos2
                     print ' Adicionado com Sucesso \n \n '
+
+def curar():
+    global hp,mana,ataque,defesa,lv,ptlv,exp,gold,character1
+    porc=0
+    if hp <=0:
+        print ' Sacerdote: Conseguimos te ressuscitar antes que sua alma fosse perdida para sempre'
+        print ' Sacerdote: Iremos te curar'
+        hp=hpmax
+        print ' Sacerdote: Caput mortuum imperet tibi Dominus per Adam lotchavah!'
+        print ' Sacerdote: Aquila errans, imperet tibi Dominus tetragrammaton per Angelum et leonem!'
+        print ' Sacerdote: Michael, Gabriel, Raphael, Anael!'
+        print ' Sacerdote: Pluat udor per spiritu Elohimm. Maneat Terra per Adam, Jatchivah.'
+        print ' Sacerdote: Fiat Jadictum per ignem in virtude Michael'
+        print ' \n\n Voce foi curado e esta com a vida em 100%'
+        print ' Voce perdeu 25% do seu GOLD'
+        porc = (25 / 100.0) * gold
+        gold=gold-porc
+        return cidade()
+    op=0
+    while op!=2:
+        print ' Avloush Keevar Soldado, o que desejas?'
+        op=input ( ' 1 - Se Curar(Necessita Gold)\n 2 - Voltar')
+        if op==1:
+            porc=(10/100)*gold
+            print ' Para te curar foi necessario', porc,' do seu gold'
+            hp=hpmax
+        elif op==2:
+            return 0
+        else:
+            print ' Opcao Incorreta'
+
+def cidade():
+    op=0
+    print ' \n\n\n\n'
+    print ' Ola nobre guerreiro, seja Bem Vindo a Cidade de Dawnstalker'
+    while op!=7:
+        print ' 1 - Inventario'
+        print ' 2 - Treinador de Caracteriticas'
+        print ' 3 - Treinador de Habilidades'#precisafazer
+        print ' 4 - Vendedor de Armas'#precisafazer
+        print ' 5 - Vendedor de Armaduras'#precisafazer
+        print ' 6 - Ir ao Templo se Curar'
+        print ' 7 - Voltar a Estrada'
+        op=input(' Digite sua Opcao ')
+        if op==1:
+            inventario()
+        elif op==2:
+            personagem()
+        elif op==3:
+            treinadorhab()
+        elif op==4:
+            npcarmas(character1)
+        elif op==5:
+            npcarmaduras(character1)
+        elif op==6:
+            curar()
+        elif op==7:
+            return 0
+        else:
+            print ' Opcao invalida'
 
 
 
@@ -196,15 +248,14 @@ def menu():
     op=0
     while op !=5:
         print ' 1 - Inventario'
-        print ' 2 = Personagem'
+        print ' 2 = Cidade'
         print ' 3 = Combate'
-        print ' 4 = Historia'
         print ' 5 = Sair'
         op=input('Digite uma opcao ')
         if op==1:
-            inventario(character1)
+            inventario()
         elif op==2:
-            personagem(character1)
+            cidade()
         elif op==3:
             combate()
         #elif op==4:
@@ -213,11 +264,21 @@ def menu():
             print ' Errrou'
 
 vault=[]
-print ' Ola jogadores \n Bem vindos a mais um jogo de TESTE'
+character1=''
+print ' Dois anos atras'
+print '         Uma vila chamada Havic foi atacada por forcas misteriosas que surgiram do alem, houve sangue, caos,'
+print '         mortes, mas um bravo soldado foi capaz de lutar contra esses seres imortais e gananciosos, como o '
+print '         unico sobrevivente do seu clan, lhe foi imcubido o dever de lutar contra as trevas e assim ter a '
+print '         vingaca que almeja desde o dia que viu sua familia morrer em seus bracos'
 character1=raw_input (' Digite o nome do seu personagem :  ')
-print 'Seja bem vindo ',character1
+print '         Esse guerreiro se chamava ',character1,' e assim comecou a sua jornada, atraves dos tempos ele '
+print '         encontrou pessoas que lhe auxiliaram no dominio da Artes Shungeki(Armas) e nas Artes'
+print '         Zaosheki(Feiticos).'
+print '         \nHoje...\n         ',character1,' Finalmente volta ao continente em sua investigacao, mas o mal estava'
+print '          dominando, agora ele deve vingar seu clan e trazer paz novamente onde um dia foi seu lar!!!'
 
 hp = 50
+hpmax=hp
 mana = 30
 ataque = 10
 defesa = 3
