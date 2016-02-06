@@ -1,3 +1,8 @@
+#modificações 06/12/2016(04:43)
+#aperfeiçoamento do menu - criação da cidade e submenus
+#criação da DEF CURAR (), Aperfeiçoamento da função que 'abre' o codigo
+
+
 def monstro_flores_inic_facil(repeat):
 
     monstro_selec=0
