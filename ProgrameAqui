@@ -1,9 +1,11 @@
-#modificações 06/12/2016(04:43)
-#aperfeiçoamento do menu - criação da cidade e submenus
-#criação da DEF CURAR (), Aperfeiçoamento da função que 'abre' o codigo
+#modificacoes 06/12/2016(20:13)
+#criacao das funcoes save e savePrincipal
 
 #NECESSARIO
-#OLHAR LINHAS 222, 223 E 224, CRIAR NOVAS FUNÇOES PARA CADA UM
+#EM ALGUMAS FUNCOES TEM UM CODIGO ASSIM >> f = open('C:/Users/steferson/Desktop/AtividadesPython/save.txt','r')
+#QUANDO ENCONTRAR ESSE "f.open" MUDE O DIRETORIO PQ FIQUEI COM PREGUICA DE MUDAR TODOS - TENTE USAR O CTRL + F, SEI LA
+
+#OLHAR LINHAS 222, 223 E 224, CRIAR NOVAS FUNCOES PARA CADA UM
 #MONSTROS PARA AS PROXIMAS FASES
 
 def monstro_flores_inic_facil(repeat):
@@ -91,6 +93,7 @@ def floresta_iniciante():
         if repeat==5:
             repeat=0
         op_continuar=input(' Deseja continuar? \n 1 - SIM\n 2 - NAO      ')
+    save()
     return 0
 def combate():
     op_combate=0
@@ -243,6 +246,62 @@ def cidade():
             print ' Opcao invalida'
 
 
+def savePrincipal ( ):
+    ''' No arquivo cada linha representa um valor, nessa ordem
+        1 - nome = character1
+        2 - hp = 50
+        3 - mana = 30
+        4 - ataque = 10
+        5 - defesa = 3
+        6 - ptlv = 5
+        7 - exp = 0
+        8 - gold = 0
+        9 - lv = 0 '''
+    f = open('C:/Users/steferson/Desktop/AtividadesPython/save.txt','r')
+    sav = f.readline ()
+    f.close()
+    if len (sav) == 0:
+        print ' Dois anos atras'
+        print '         Uma vila chamada Havic foi atacada por forcas misteriosas que surgiram do alem, houve sangue, caos,'
+        print '         mortes, mas um bravo soldado foi capaz de lutar contra esses seres imortais e gananciosos, como o '
+        print '         unico sobrevivente do seu clan, lhe foi imcubido o dever de lutar contra as trevas e assim ter a '
+        print '         vingaca que almeja desde o dia que viu sua familia morrer em seus bracos'
+        character1=raw_input (' Digite o nome do seu personagem :  ')
+        print '         Esse guerreiro se chamava ',character1,' e assim comecou a sua jornada, atraves dos tempos ele '
+        print '         encontrou pessoas que lhe auxiliaram no dominio da Artes Shungeki(Armas) e nas Artes'
+        print '         Zaosheki(Feiticos).'
+        print '         \nHoje...\n         ',character1,' Finalmente volta ao continente em sua investigacao, mas o mal estava'
+        print '          dominando, agora ele deve vingar seu clan e trazer paz novamente onde um dia foi seu lar!!!'
+        save()
+    else:
+        f = open('C:/Users/steferson/Desktop/AtividadesPython/save.txt','r')
+        character1 = f.readline( )
+        character1 = character1.replace('\n','')
+        hp = int(f.readline())
+        mana = int(f.readline())
+        ataque = int(f.readline())
+        defesa = int(f.readline())
+        ptlv = int(f.readline())
+        exp = int(f.readline())
+        gold = int(f.readline())
+        lv = int(f.readline())
+        print character1, 'voltou para a estrada com os seguintes atributos \nhp =',hp, '\nataque =',ataque,'\ndefesa =',defesa
+        print 'mana =',mana,'\nptlv =',ptlv,'\nexp =',exp,'\ngold =',gold,'\nlv =',lv,'\n'
+
+def save ():
+    global hp,mana,ataque,defesa,lv,ptlv,exp,gold,character1
+    shp = str(hp)
+    smana = str(mana)
+    sataque = str(ataque)
+    sdefesa = str(defesa)
+    sptlv = str(ptlv)
+    sexp = str(exp)
+    sgold = str(gold)
+    slv = str(lv)
+    sav = character1 + '\n' + shp + '\n' + smana + '\n' + sataque + '\n' + sdefesa + '\n' + sptlv + '\n' + sexp + '\n' + sgold + '\n' + slv
+    f = open('C:/Users/steferson/Desktop/AtividadesPython/save.txt','w')
+    f.write(sav)
+
 
 def menu():
     op=0
@@ -265,18 +324,8 @@ def menu():
 
 vault=[]
 character1=''
-print ' Dois anos atras'
-print '         Uma vila chamada Havic foi atacada por forcas misteriosas que surgiram do alem, houve sangue, caos,'
-print '         mortes, mas um bravo soldado foi capaz de lutar contra esses seres imortais e gananciosos, como o '
-print '         unico sobrevivente do seu clan, lhe foi imcubido o dever de lutar contra as trevas e assim ter a '
-print '         vingaca que almeja desde o dia que viu sua familia morrer em seus bracos'
-character1=raw_input (' Digite o nome do seu personagem :  ')
-print '         Esse guerreiro se chamava ',character1,' e assim comecou a sua jornada, atraves dos tempos ele '
-print '         encontrou pessoas que lhe auxiliaram no dominio da Artes Shungeki(Armas) e nas Artes'
-print '         Zaosheki(Feiticos).'
-print '         \nHoje...\n         ',character1,' Finalmente volta ao continente em sua investigacao, mas o mal estava'
-print '          dominando, agora ele deve vingar seu clan e trazer paz novamente onde um dia foi seu lar!!!'
-
+f = open('C:/Users/steferson/Desktop/AtividadesPython/save.txt','a')
+f.close()
 hp = 50
 hpmax=hp
 mana = 30
@@ -287,5 +336,7 @@ exp=0
 gold=0
 lv = 0
 vault=0
+savePrincipal()
+
 import random
 menu()
