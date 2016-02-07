@@ -37,7 +37,8 @@ def todositens():
     n_dragonreaper = ' Ceifadora de Dragoes'
     
     
-    
+    #ARMA[ ID,NIVEL, DANO, VALORCOMPRA,VALORVENDA, HP, MANA, DEFESA]
+
     e_placaleve = [50, 3, 0, 50, 10, 0, 0, 10]
     n_eplacaleve = ' Elmo de Placa Leve'
 
