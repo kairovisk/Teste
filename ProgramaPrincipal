@@ -67,6 +67,74 @@ def todositens(id2):
     n_pertudeabis = ' Pertubadora de Abismos'
     
     
+    e_placaleve = [50, 3, 0, 60, 10, 0, 0, 1]
+    n_eplacaleve = ' Elmo de Placa Leve'
+    a_placaleve = [51, 3, 0, 60, 10, 6, 0, 2]
+    n_aplacaleve = ' Armadura de Placa Leve'
+    b_placaleve = [52, 3, 0, 60, 10, 3, 0, 0]
+    n_bplacaleve = ' Botas de Placa Leve'
+    e_placapesada = [53, 6, 0, 100, 15, 0, 0, 2]
+    n_eplacapesada = ' Elmo de Placa Pesada'
+    a_placapesada = [54, 6, 0, 100, 15, 12, 0, 4]
+    n_aplacapesada = ' Armadura de Placa Pesada'
+    b_placapesada = [55, 6, 0, 100, 15, 6, 0, 0]
+    n_bplacapesada = ' Botas de Placa Pesada'
+    e_placabronze = [56, 9, 0, 250, 40, 0, 0, 3]
+    n_eplacabronze = ' Elmo de Placa Bronze'
+    a_placabronze = [57, 9, 0, 250, 40, 18, 0, 6]
+    n_aplacabronze = ' Armadura de Placa Bronze'
+    b_placabronze = [58, 9, 0, 250, 40, 9, 0, 0]
+    n_bplacabronze = ' Botas de Placa Bronze'
+    e_combatente = [59, 12, 0, 400, 70, 0, 0, 4]
+    n_ecombatente = ' Elmo do Combatente'
+    a_combatente = [60, 12, 0, 400, 70, 24, 0, 8]
+    n_acombatente = ' Armadura do Combatente'
+    b_combatente = [61, 12, 0, 400, 70, 12, 0, 0]
+    n_bcombatente = ' Botas do Combatente'
+    e_ferrofundido = [62, 15, 0, 550, 100, 0, 0, 5]
+    n_eferrofundido = ' Elmo de Ferro Fundido'
+    a_ferrofundido = [63, 15, 0, 550, 100, 30, 0, 10]
+    n_aferrofundido = ' Armadura de Ferro Fundido'
+    b_ferrofundido = [64, 15, 0, 550, 100, 15, 0, 0]
+    n_bferrofundido = ' Botas de Ferro Fundido'
+    e_dawnstalker = [65, 18, 0, 700, 130, 0, 0, 6]
+    n_edawnstalker = ' Elmo de Aco Dawnstalker'
+    a_dawnstalker = [66, 18, 0, 700, 130, 36, 0, 12]
+    n_adawnstalker = ' Armadura de Aco Dawnstalker'
+    b_dawnstalker = [67, 18, 0, 700, 130, 18, 0, 0]
+    n_bdawnstalker = ' Botas de Aco Dawnstalker'
+    e_serpente = [68, 23, 0, 900, 180, 0, 0, 7]
+    n_eserpente = ' Elmo Couraca de Serpente'
+    a_serpente = [69, 23, 0, 900, 180, 42, 0, 14]
+    n_aserpente = ' Armadura Couraca de Serpente'
+    b_serpente = [70, 23, 0, 900, 180, 21, 0, 0]
+    n_bserpente = ' Botas Couraca de Serpente'
+    e_diamante = [71, 27, 0, 1050, 210, 0, 0, 8]
+    n_ediamante = ' Elmo de Diamante Reluzente'
+    a_diamante = [72, 27, 0, 1050, 210, 42, 0, 16]
+    n_adiamante = ' Armadura de Diamante Reluzente'
+    b_diamante = [73, 27, 0, 1050, 210, 24, 0, 0]
+    n_bdiamante = ' Botas de Diamante Reluzente'
+    e_sombras = [74, 31, 0, 1250, 250, 0, 0, 9]
+    n_esombras = ' Elmo das Sombras'
+    a_sombras = [75, 31, 0, 1250, 250, 54, 0, 18]
+    n_asombras = ' Armadura das Sombras'
+    b_sombras = [76, 31, 0, 1250, 250, 27, 0, 0]
+    n_bsombras = ' Botas das Sombras'
+    e_placashavic = [77, 35, 0, 1500, 300, 0, 0, 10]
+    n_eplacashavic = ' Elmo Havic'
+    a_placashavic = [78, 35, 0, 1500, 300, 60, 0, 20]
+    n_aplacashavic = ' Armadura Havic'
+    b_placashavic = [79, 35, 0, 1500, 300, 25, 0, 0]
+    n_bplacashavic = ' Botas Havic'
+    e_draconico = [80, 40, 0, 'x', 500, 0, 0, 12]
+    n_edraconico = ' Elmo de Osso Draconico'
+    a_draconico = [81, 40, 0, 'x', 500, 65, 0, 23]
+    n_adraconico = ' Elmo de Osso Draconico'
+    b_draconico = [82, 40, 0, 'x', 500, 35, 0, 0]
+    n_bdraconico = ' Elmo de Osso Draconico'
+
+    
     
     
     if id2 == 1:
