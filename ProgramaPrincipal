@@ -35,6 +35,11 @@ def todositens():
     n_haviclegend =' Havic Legendaria'
     dragonreaper = [10, 40, 60, 0, 8000]
     n_dragonreaper = ' Ceifadora de Dragoes'
+    
+    
+    
+    e_placaleve = [50, 3, 0, 50, 10, 0, 0, 10]
+    n_eplacaleve = ' Elmo de Placa Leve'
 
 
 def monstro_flores_inic_facil(repeat):
