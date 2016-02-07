@@ -1,6 +1,6 @@
 #modificacoes 06/12/2016(20:13)
 #criacao das funcoes save e savePrincipal
-#criação de objetos e NPC ARMAS (olhar 219 a 280)
+#criaaoo de objetos e NPC ARMAS (olhar 219 a 280)
 #criado npc armas (263 ate 320)
 
 #NECESSARIO
@@ -35,7 +35,7 @@ def todositens():
     n_haviclegend =' Havic Legendaria'
     dragonreaper = [10, 40, 60, 0, 8000]
     n_dragonreaper = ' Ceifadora de Dragoes'
-    
+
 
 def monstro_flores_inic_facil(repeat):
 
@@ -146,10 +146,9 @@ def combate():
         else:
             print 'Opcao Invalida'
 
-
 def inventario():
     armaid=[]
-    global vault, character1, gold
+    global vault, character1, gold, manamax, defesamax, atkmax, hpmax
     if len(vault) == 0:
         print '\n\n\n'
         print ' GOLD = ',gold
@@ -170,10 +169,11 @@ def inventario():
             #else:
                 #menu()
 def personagem():
-    global hp,mana,ataque,defesa,lv,ptlv,exp,gold,character1,hpmax
+    global hp,mana,ataque,defesa,lv,ptlv,exp,gold,character1, hpmax, atkmax, manamax, defesamax
     print ' Caracteristicas de ', character1
     print ' Nivel = ', lv
-    print ' VIDA = ', hp
+    print ' VIDA ATUAL = ', hp
+    print ' HP MAXIMA = ',hpmax
     print ' MANA = ', mana
     print ' Ataque = ', ataque
     print ' Defesa = ', defesa
@@ -244,15 +244,15 @@ def curar():
         print ' Avloush Keevar Soldado, o que desejas?'
         op=input ( ' 1 - Se Curar(Necessita Gold)\n 2 - Voltar')
         if op==1:
-            porc=gold/10
+            porc=gold*0.1
             print ' Para te curar foi necessario', porc,' do seu gold'
             hp=hpmax
         elif op==2:
             return 0
         else:
             print ' Opcao Incorreta'
- 
-            
+
+
 def armasfis(id2):
     #ARMA[ ID,NIVEL, DANO, VALORCOMPRA,VALORVENDA]
     espadacurta = [1, 3,5,200,35]
@@ -406,9 +406,10 @@ def savePrincipal ( ):
         6 - ptlv = 5
         7 - exp = 0
         8 - gold = 0
-        9 - lv = 0 '''
+        9 - lv = 0
+        '''
     global character1,hp,mana,ataque,defesa,lv,ptlv,exp,gold,hpmax,atkmax
-    f = open('C:\Users\KairoBruno\Documents\save.txt','r')
+    f = open('C:/Users/steferson/Desktop/AtividadesPython/save.txt','r')
     sav = f.readline ()
     f.close()
     if len (sav) == 0:
@@ -425,7 +426,7 @@ def savePrincipal ( ):
         print '          dominando, agora ele deve vingar seu clan e trazer paz novamente onde um dia foi seu lar!!!'
         save()
     else:
-        f = open('C:\Users\KairoBruno\Documents\save.txt','r')
+        f = open('C:/Users/steferson/Desktop/AtividadesPython/save.txt','r')
         character1 = f.readline( )
         character1 = character1.replace('\n','')
         hp = int(f.readline())
@@ -438,8 +439,10 @@ def savePrincipal ( ):
         lv = int(f.readline())
         hpmax = int(f.readline())
         atkmax = int(f.readline())
-        print character1, ' Voltou para a estrada com os seguintes atributos \nHP =',hp, '\nATAQUE =',ataque,'\nDEFESA =',defesa
-        print 'MANA =',mana,'\nPontos =',ptlv,'\nEXPERIENCIA =',exp,'\nGOLD =',gold,'\nLEVEL =',lv,'\nhpmax =',hpmax,'\natkmax= ',atkmax,'\n'
+        manamax = int(f.readline())
+        defesamax = int(f.readline())
+        print character1, ' Voltou para a estrada com os seguintes atributos \nHP MAXIMO = ',hpmax,'\nHP ATUAL =',hp, '\nATAQUE =',ataque,'\nDEFESA =',defesa
+        print 'MANA =',mana,'\nPontos =',ptlv,'\nEXPERIENCIA =',exp,'\nGOLD =',gold,'\nLEVEL =',lv,'\n'
 
 def save ():
     global hp,mana,ataque,defesa,lv,ptlv,exp,gold,character1,hpmax,atkmax
@@ -452,9 +455,12 @@ def save ():
     sgold = str(gold)
     slv = str(lv)
     shpmax = str(hpmax)
-    satakmax = str(atkmax)
-    sav = character1 + '\n' + shp + '\n' + smana + '\n' + sataque + '\n' + sdefesa + '\n' + sptlv + '\n' + sexp + '\n' + sgold + '\n' + slv + '\n' + shpmax + '\n' + satkmax
-    f = open('C:\Users\KairoBruno\Documents\save.txt','w')
+    satkmax = str(atkmax)
+    smanamax = str(manamax)
+    sdefesamax = str(defesamax)
+    sav = character1 + '\n' + shp + '\n' + smana + '\n' + sataque + '\n' + sdefesa + '\n' + sptlv + '\n' + sexp
+    sav = sav + '\n' + sgold + '\n' + slv + '\n' + shpmax + '\n' + satkmax + '\n' + smanamax + '\n' + sdefesamax
+    f = open('C:/Users/steferson/Desktop/AtividadesPython/save.txt','w')
     f.write(sav)
     print ' Jogo Salvo com Sucesso'
 
@@ -481,7 +487,7 @@ def menu():
 
 vault=[]
 character1=''
-f = open('C:\Users\KairoBruno\Documents\save.txt','a')
+f = open('C:/Users/steferson/Desktop/AtividadesPython/save.txt','a')
 f.close()
 hp = 50
 hpmax=hp
@@ -493,6 +499,8 @@ exp=0
 gold=0
 lv = 0
 atkmax = ataque
+manamax = mana
+defesamax = defesa
 savePrincipal()
 import random
 menu()
