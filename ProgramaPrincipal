@@ -1,6 +1,7 @@
 #modificacoes 06/12/2016(20:13)
 #criacao das funcoes save e savePrincipal
 #criação de objetos e NPC ARMAS (olhar 219 a 280)
+#criado npc armas (263 ate 320)
 
 #NECESSARIO
 #EM ALGUMAS FUNCOES TEM UM CODIGO ASSIM >> f = open('C:/Users/steferson/Desktop/AtividadesPython/save.txt','r')
@@ -262,9 +263,14 @@ def armasfis(id2):
 
 def npcarmas():
     op=0
+    global vault, gold
+    op2=0
+    compra==1
     id2=0
     n_arma=''
     arma=[]
+    armaid=[]
+    armagold=[]
     #ARMA[ ID,NIVEL, DANO, VALORCOMPRA,VALORVENDA]
     while op!=4:
         print ' Vendedor: Voce acaba de entrar na melhor loja de armas do continente, o que desejas?'
@@ -273,13 +279,46 @@ def npcarmas():
             print ' Vendedor: Um guerreiro entao? Tenho a disposicao varias armas, escolha a que desejar'
             for id2 in range(1,7):
                 n_arma, arma=armasfis(id2)
-                print n_arma,'---- Nivel: ',arma[1], ' ---- Dano:', arma[2], ' ---- Preco:', arma[3]
-                
+                print ' Numero: ', arma[0],' -----' n_arma,'---- Nivel: ',arma[1], ' ---- Dano:', arma[2], ' ---- Preco:', arma[3]
+                armaid=arma[0]
+                armagold=arma[3]
+            op2=input(' Qual deseja comprar?\n 6 = Voltar a Cidade')
+            while op2!=6
+                if op2==0 and gold>=armagold[0]:
+                    vault=armaid[0]
+                    gold= gold - armagold[0]
+                    compra=0
+                elif op2==1 and gold>=armagold[1]:
+                    vault=armaid[1]
+                    gold= gold - armagold[1]
+                    compra=0
+                elif op==2 and gold>=armagold[2]:
+                    vault=armaid[2]
+                    gold= gold - armagold[2]
+                    compra=0
+                elif op2==3 and gold>=armagold[3]:
+                    vault=armaid[3]
+                    gold= gold - armagold[3]
+                    compra=0
+                elif op==4 and gold>=armagold[4]:
+                    vault=armaid[4]
+                    gold= gold - armagold[4]
+                    compra=0
+                elif op2==5 and gold>=armagold[5]:
+                    vault=armaid[5]
+                    gold= gold - armagold[5]
+                    compra=0
+                elif op==6:
+                    return 0
+                elif compra==1:
+                    print ' GOLD insuficiente'
+                    return 0
+                else:
+                    print' Opcao invalida'
         elif op==2:
             print ' Vendedor: Um mago correto? Tenho diversos artefatos a te oferecer'
             for id2 in range():
                 n_arma, arma=armasmag(id2)
-
 
 
 
