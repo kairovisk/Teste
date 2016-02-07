@@ -16,6 +16,8 @@
 
 
 
+d
+
 def todositens(id2):
 
     #ARMA[ ID,NIVEL, DANO, VALORCOMPRA,VALORVENDA, HP, MANA, DEFESA]
@@ -248,7 +250,7 @@ def todositens(id2):
         return n_edraconico, e_draconico
     elif id2 == 81:
         return n_adraconico, a_draconico
-    elif id2 == 82:
+    else:
         return n_bdraconico, b_draconico
 
 
@@ -625,61 +627,103 @@ def npcarmas():
     armaid = []
     armagold = []
     '# ARMA[ ID,NIVEL, DANO, VALORCOMPRA, VALORVENDA]'
-    print ' Vendedor: Voce acaba de entrar na melhor loja de armas do continente, o que desejas?'
-    op = input (' 1 - Comprar uma Arma Fisica\n 2 - Comprar uma Arma Magica\n 3 - Reforcar uma Arma \n 4 - Sair')
-    if op == 1:
-        print ' Vendedor: Um guerreiro entao? Tenho a disposicao varias armas, escolha a que desejar'
-        for id2 in range(1,7):
-            n_arma, arma=armasfis(id2)
-            print ' Numero: ', arma[0], ' -----', n_arma, '---- Nivel: ', arma[1], ' ---- Dano:', arma[2], ' ---- Preco:', arma[3]
-            armaid.append(arma[0])
-            armagold.append(arma[3])
-        op2 = input(' Qual deseja comprar? ')
-        if op2 == 0 and gold >= armagold[0]:
-            vault.append (armaid[0])
-            gold = float(gold - armagold[0])
-            compra = 0
-            print 'Compra Efetuada com Sucesso'
-            op = 6
-        elif op2 == 1 and gold >= armagold[1]:
-            vault.append(armaid[1])
-            gold = float(gold - armagold[1])
-            compra = 0
-            print 'Compra Efetuada com Sucesso'
-            op = 6
-        elif op == 2 and gold >= armagold[2]:
-            vault.append(armaid[2])
-            gold = gold - armagold[2]
-            compra = 0
-            print 'Compra Efetuada com Sucesso'
-            op = 6
-        elif op2 == 3 and gold >= armagold[3]:
-            vault.append(armaid[3])
-            gold = gold - armagold[3]
-            compra = 0
-            print 'Compra Efetuada com Sucesso'
-            op = 6
-        elif op == 4 and gold >= armagold[4]:
-            vault.append(armaid[4])
-            gold = gold - armagold[4]
-            compra = 0
-            print 'Compra Efetuada com Sucesso'
-            op = 6
-        elif op2 == 5 and gold >= armagold[5]:
-            vault.append(armaid[5])
-            gold = gold - armagold[5]
-            compra = 0
-            print 'Compra Efetuada com Sucesso'
-            op = 6
-        elif op == 6:
-            return 0
-        elif compra == 1:
-            print ' GOLD insuficiente'
-            return 0
-        else:
-            print' Opcao invalida'
-    elif op == 2:
-        print ' Vendedor: Um mago correto? Tenho diversos artefatos a te oferecer'
+    while op != 4:
+        print ' Vendedor: Voce acaba de entrar na melhor loja de armas do continente, o que desejas?'
+        op = input (' 1 - Comprar uma Arma Fisica\n 2 - Comprar uma Arma Magica\n 3 - Reforcar uma Arma \n 4 - Sair')
+        if op == 1:
+            print ' Vendedor: Um guerreiro entao? Tenho a disposicao varias armas, escolha a que desejar'
+            for id2 in range(1,7):
+                n_arma, arma=armasfis(id2)
+                print ' Numero: ', arma[0], ' -----', n_arma, '---- Nivel: ', arma[1], ' ---- Dano:', arma[2], ' ---- Preco:', arma[3]
+                armaid.append(arma[0])
+                armagold.append(arma[3])
+                op2 = input(' Qual deseja comprar?(NUMERO)\n 9 = Voltar a Cidade')
+                if op2 == 1 and gold >= armagold[0]:
+                    vault=armaid[0]
+                    gold = gold - armagold[0]
+                    compra = 0
+                elif op2 == 2 and gold >= armagold[1]:
+                    vault=armaid[1]
+                    gold = gold - armagold[1]
+                    compra = 0
+                elif op == 3 and gold >= armagold[2]:
+                    vault = armaid[2]
+                    gold = gold - armagold[2]
+                    compra = 0
+                elif op2 == 4 and gold >= armagold[3]:
+                    vault = armaid[3]
+                    gold = gold - armagold[3]
+                    compra = 0
+                elif op == 5 and gold >= armagold[4]:
+                    vault = armaid[4]
+                    gold = gold - armagold[4]
+                    compra = 0
+                elif op2 == 6 and gold >= armagold[5]:
+                    vault=armaid[5]
+                    gold = gold - armagold[5]
+                    compra = 0
+                elif op2 == 7 and gold >= armagold[6]:
+                    vault = armaid[6]
+                    gold = gold - armagold[6]
+                    compra = 0
+                elif op == 8 and gold >= armagold[7]:
+                    vault = armaid[7]
+                    gold = gold - armagold[7]
+                    compra = 0
+                elif op == 9:
+                    return 0
+                elif compra == 1:
+                    print ' GOLD insuficiente'
+                    return 0
+                else:
+                    print' Opcao invalida'
+        elif op == 2:
+            print ' Vendedor: Um mago correto? Tenho diversos artefatos a te oferecer'
+            for id2 in range(1,7):
+                n_arma, arma=armasfis(id2)
+                print ' Numero: ', arma[0], ' -----', n_arma, '---- Nivel: ', arma[1], ' ---- Dano:', arma[2], ' ---- Preco:', arma[3]
+                armaid.append(arma[0])
+                armagold.append(arma[3])
+                op2 = input(' Qual deseja comprar?(NUMERO)\n 9 = Voltar a Cidade')
+                if op2 == 13 and gold >= armagold[0]:
+                    vault=armaid[0]
+                    gold = gold - armagold[0]
+                    compra = 0
+                elif op2 == 14 and gold >= armagold[1]:
+                    vault=armaid[1]
+                    gold = gold - armagold[1]
+                    compra = 0
+                elif op == 15 and gold >= armagold[2]:
+                    vault = armaid[2]
+                    gold = gold - armagold[2]
+                    compra = 0
+                elif op2 == 16 and gold >= armagold[3]:
+                    vault = armaid[3]
+                    gold = gold - armagold[3]
+                    compra = 0
+                elif op == 17 and gold >= armagold[4]:
+                    vault = armaid[4]
+                    gold = gold - armagold[4]
+                    compra = 0
+                elif op2 == 18 and gold >= armagold[5]:
+                    vault=armaid[5]
+                    gold = gold - armagold[5]
+                    compra = 0
+                elif op2 == 19 and gold >= armagold[6]:
+                    vault = armaid[6]
+                    gold = gold - armagold[6]
+                    compra = 0
+                elif op == 20 and gold >= armagold[7]:
+                    vault = armaid[7]
+                    gold = gold - armagold[7]
+                    compra = 0
+                elif op == 9:
+                    return 0
+                elif compra == 1:
+                    print ' GOLD insuficiente'
+                    return 0
+                else:
+                    print' Opcao invalida'
 
 
 def elmos(id2):
@@ -827,10 +871,262 @@ def botas(id2):
 
 def npcarmaduras():
     op = 0
+    global vault, gold
+    op2 = 0
+    compra = 1
+    id2 = 0
+    n_arma = ''
+    arma = []
+    itemid = []
+    itemgold = []
     print ' Bem vindo a maior Loja de Armaduras de  Havic'
     op = input(' 1 = Elmos\n 2 = Armaduras\n 3 = Botas\n 4 = Sair         :')
     if op == 1:
+        for id2 in range(1,7):
+            n_arma, arma=armasfis(id2)
+            print ' Numero: ', arma[0], ' -----', n_arma, '---- Nivel: ', arma[1], ' ---- Dano:', arma[2], ' ---- Preco:', arma[3]
+            itemid.append(arma[0])
+            itemgold.append(arma[3])
+            op2 = input(' Qual deseja comprar? ')
+        if op2 == 50 and gold >= itemgold[0]:
+            vault.append (itemid[0])
+            gold = float(gold - itemgold[0])
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 53 and gold >= itemgold[1]:
+            vault.append(itemid[1])
+            gold = float(gold - itemgold[1])
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 56 and gold >= itemgold[2]:
+            vault.append(itemid[2])
+            gold = gold - itemgold[2]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 59 and gold >= itemgold[3]:
+            vault.append(itemid[3])
+            gold = gold - itemgold[3]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 62 and gold >= itemgold[4]:
+            vault.append(itemid[4])
+            gold = gold - itemgold[4]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 65 and gold >= itemgold[5]:
+            vault.append(itemid[5])
+            gold = gold - itemgold[5]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 68 and gold >= itemgold[6]:
+            vault.append(itemid[6])
+            gold = gold - itemgold[6]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 71 and gold >= itemgold[7]:
+            vault.append(itemid[7])
+            gold = gold - itemgold[7]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 74 and gold >= itemgold[8]:
+            vault.append(itemid[8])
+            gold = gold - itemgold[8]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 77 and gold >= itemgold[9]:
+            vault.append(itemid[9])
+            gold = gold - itemgold[9]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 81 and gold >= itemgold[10]:
+            vault.append(itemid[10])
+            gold = gold - itemgold[10]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 6:
+            return 0
+        elif compra == 1:
+            print ' GOLD insuficiente'
+            return 0
+        else:
+            print' Opcao invalida'
 
+    elif op == 2:
+        for id2 in range(1,7):
+            n_arma, arma=armasfis(id2)
+            print ' Numero: ', arma[0], ' -----', n_arma, '---- Nivel: ', arma[1], ' ---- Dano:', arma[2], ' ---- Preco:', arma[3]
+            itemid.append(arma[0])
+            itemgold.append(arma[3])
+            op2 = input(' Qual deseja comprar? ')
+        if op2 == 51 and gold >= itemgold[0]:
+            vault.append (itemid[0])
+            gold = float(gold - itemgold[0])
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 54 and gold >= itemgold[1]:
+            vault.append(itemid[1])
+            gold = float(gold - itemgold[1])
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 57 and gold >= itemgold[2]:
+            vault.append(itemid[2])
+            gold = gold - itemgold[2]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 60 and gold >= itemgold[3]:
+            vault.append(itemid[3])
+            gold = gold - itemgold[3]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 63 and gold >= itemgold[4]:
+            vault.append(itemid[4])
+            gold = gold - itemgold[4]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 66 and gold >= itemgold[5]:
+            vault.append(itemid[5])
+            gold = gold - itemgold[5]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 69 and gold >= itemgold[6]:
+            vault.append(itemid[6])
+            gold = gold - itemgold[6]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 72 and gold >= itemgold[7]:
+            vault.append(itemid[7])
+            gold = gold - itemgold[7]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 75 and gold >= itemgold[8]:
+            vault.append(itemid[8])
+            gold = gold - itemgold[8]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 78 and gold >= itemgold[9]:
+            vault.append(itemid[9])
+            gold = gold - itemgold[9]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 82 and gold >= itemgold[10]:
+            vault.append(itemid[10])
+            gold = gold - itemgold[10]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 6:
+            return 0
+        elif compra == 1:
+            print ' GOLD insuficiente'
+            return 0
+        else:
+            print' Opcao invalida'
+
+    elif op == 3:
+        for id2 in range(1,7):
+            n_arma, arma=armasfis(id2)
+            print ' Numero: ', arma[0], ' -----', n_arma, '---- Nivel: ', arma[1], ' ---- Dano:', arma[2], ' ---- Preco:', arma[3]
+            itemid.append(arma[0])
+            itemgold.append(arma[3])
+            op2 = input(' Qual deseja comprar? ')
+        if op2 == 52 and gold >= itemgold[0]:
+            vault.append (itemid[0])
+            gold = float(gold - itemgold[0])
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 55 and gold >= itemgold[1]:
+            vault.append(itemid[1])
+            gold = float(gold - itemgold[1])
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 58 and gold >= itemgold[2]:
+            vault.append(itemid[2])
+            gold = gold - itemgold[2]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 61 and gold >= itemgold[3]:
+            vault.append(itemid[3])
+            gold = gold - itemgold[3]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 64 and gold >= itemgold[4]:
+            vault.append(itemid[4])
+            gold = gold - itemgold[4]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 67 and gold >= itemgold[5]:
+            vault.append(itemid[5])
+            gold = gold - itemgold[5]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 70 and gold >= itemgold[6]:
+            vault.append(itemid[6])
+            gold = gold - itemgold[6]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 73 and gold >= itemgold[7]:
+            vault.append(itemid[7])
+            gold = gold - itemgold[7]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 76 and gold >= itemgold[8]:
+            vault.append(itemid[8])
+            gold = gold - itemgold[8]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 79 and gold >= itemgold[9]:
+            vault.append(itemid[9])
+            gold = gold - itemgold[9]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 82 and gold >= itemgold[10]:
+            vault.append(itemid[10])
+            gold = gold - itemgold[10]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 6:
+            return 0
+        elif compra == 1:
+            print ' GOLD insuficiente'
+            return 0
+        else:
+            print' Opcao invalida'
+    elif op2 == 4:
+       return 0
+    else:
+        print' Opcao Invalida    '
 
 #def treinadorhab():
 
@@ -857,7 +1153,7 @@ def cidade():
             #treinadorhab()
         elif op == 4:
             npcarmas()
-        #elif op==5:
+        elif op == 5:
             npcarmaduras()
         elif op == 6:
             curar()
