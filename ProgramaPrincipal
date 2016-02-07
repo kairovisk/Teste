@@ -324,17 +324,39 @@ def inventario():
         if lv < armaid[2]:
             print ' Nivel Insuficiente\n\n'
         else:
-            ataque=0
-            #ARMA[ ID,NIVEL, DANO, VALORCOMPRA,VALORVENDA, HP, MANA, DEFESA]
-            ataque=atkmax+armaid[2]
-            hp = hp - armaid2[5]
-            hp = hp + armaid[5]
-            mana = mana - armaid2[6]
-            mana = mana + armaid[6]
-            defesa = defesa - armaid2[7]
-            defesa = defesa + armaid[7]
-            print armaid, '   Equipado com Sucesso'
-            return 0
+            #ARMA[ ID,NIVEL, DANO, VALORCOMPRA,VALORVENDA, HP, MANA, DEFESA, PECA]
+            if armaid[8] == 9:
+                ataque=0
+                ataque=atkmax+armaid[2]
+                print armaid, '   Arma Equipada com Sucesso'
+                return 0
+            elif armaid[8] == 8:
+                hp = hp - armaid2[5]
+                hp = hp + armaid[5]
+                mana = mana - armaid2[6]
+                mana = mana + armaid[6]
+                defesa = defesa - armaid2[7]
+                defesa = defesa + armaid[7]
+                print armaid, '   Botas Equipadas com Sucesso'
+                return 0
+            elif armaid[8] == 7:
+                hp = hp - armaid2[5]
+                hp = hp + armaid[5]
+                mana = mana - armaid2[6]
+                mana = mana + armaid[6]
+                defesa = defesa - armaid2[7]
+                defesa = defesa + armaid[7]
+                print armaid, '   Armadura Equipada com Sucesso'
+                return 0
+            elif armaid[8] == 6:
+                hp = hp - armaid2[5]
+                hp = hp + armaid[5]
+                mana = mana - armaid2[6]
+                mana = mana + armaid[6]
+                defesa = defesa - armaid2[7]
+                defesa = defesa + armaid[7]
+                print armaid, '   Elmo Equipado com Sucesso'
+                return 0
 
 
 def personagem():
