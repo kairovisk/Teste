@@ -91,7 +91,8 @@ def floresta_iniciante():
         if exp>=50:
             print ' Voce passou de nivel e ganhou 3 Pontos de Caracteristica'
             ptlv=ptlv+3
-            exp=0
+            lv=lv+1
+            exp=exp-50
         if repeat==5:
             repeat=0
         op_continuar=input(' Deseja continuar? \n 1 - SIM\n 2 - NAO      ')
@@ -119,11 +120,14 @@ def combate():
             print 'Opcao Invalida'
 
 def inventario():
-    global vault,character1
+    global vault,character1, gold
     if len(vault)==0:
+        print '\n\n\n'
         print ' GOLD = ',gold
         print ' Inventario Vazio'
+        print '\n\n\n'
     else:
+        print '\n\n\n'
         print ' Este e o inventario de ', character1
         print ' GOLD = ',gold
         for i in range (len(vault)):
@@ -201,7 +205,7 @@ def curar():
         print ' Sacerdote: Fiat Jadictum per ignem in virtude Michael'
         print ' \n\n Voce foi curado e esta com a vida em 100%'
         print ' Voce perdeu 25% do seu GOLD'
-        porc = (25 / 100.0) * gold
+        porc = gold *0,25
         gold=gold-porc
         return cidade()
     op=0
@@ -209,7 +213,7 @@ def curar():
         print ' Avloush Keevar Soldado, o que desejas?'
         op=input ( ' 1 - Se Curar(Necessita Gold)\n 2 - Voltar')
         if op==1:
-            porc=(10/100)*gold
+            porc=gold/10
             print ' Para te curar foi necessario', porc,' do seu gold'
             hp=hpmax
         elif op==2:
@@ -339,7 +343,7 @@ def cidade():
     while op!=7:
         print ' 1 - Inventario'
         print ' 2 - Treinador de Caracteriticas'
-        print ' 3 - Treinador de Habilidades'#precisafazer
+        print ' 3 - Mestre dos Feiticos'#precisafazer
         print ' 4 - Vendedor de Armas'#precisafazer
         print ' 5 - Vendedor de Armaduras'#precisafazer
         print ' 6 - Ir ao Templo se Curar'
@@ -374,7 +378,8 @@ def savePrincipal ( ):
         7 - exp = 0
         8 - gold = 0
         9 - lv = 0 '''
-    f = open('C:/Users/steferson/Desktop/AtividadesPython/save.txt','r')
+    global character1,hp,mana,ataque,defesa,lv,ptlv,exp,gold
+    f = open('C:\Users\KairoBruno\Documents\save.txt','r')
     sav = f.readline ()
     f.close()
     if len (sav) == 0:
@@ -391,7 +396,7 @@ def savePrincipal ( ):
         print '          dominando, agora ele deve vingar seu clan e trazer paz novamente onde um dia foi seu lar!!!'
         save()
     else:
-        f = open('C:/Users/steferson/Desktop/AtividadesPython/save.txt','r')
+        f = open('C:\Users\KairoBruno\Documents\save.txt','r')
         character1 = f.readline( )
         character1 = character1.replace('\n','')
         hp = int(f.readline())
@@ -402,8 +407,8 @@ def savePrincipal ( ):
         exp = int(f.readline())
         gold = int(f.readline())
         lv = int(f.readline())
-        print character1, 'voltou para a estrada com os seguintes atributos \nhp =',hp, '\nataque =',ataque,'\ndefesa =',defesa
-        print 'mana =',mana,'\nptlv =',ptlv,'\nexp =',exp,'\ngold =',gold,'\nlv =',lv,'\n'
+        print character1, ' Voltou para a estrada com os seguintes atributos \nHP =',hp, '\nATAQUE =',ataque,'\nDEFESA =',defesa
+        print 'MANA =',mana,'\nPontos =',ptlv,'\nEXPERIENCIA =',exp,'\nGOLD =',gold,'\nLEVEL =',lv,'\n'
 
 def save ():
     global hp,mana,ataque,defesa,lv,ptlv,exp,gold,character1
@@ -416,8 +421,9 @@ def save ():
     sgold = str(gold)
     slv = str(lv)
     sav = character1 + '\n' + shp + '\n' + smana + '\n' + sataque + '\n' + sdefesa + '\n' + sptlv + '\n' + sexp + '\n' + sgold + '\n' + slv
-    f = open('C:/Users/steferson/Desktop/AtividadesPython/save.txt','w')
+    f = open('C:\Users\KairoBruno\Documents\save.txt','w')
     f.write(sav)
+    print ' Jogo Salvo com Sucesso'
 
 
 def menu():
@@ -426,6 +432,7 @@ def menu():
         print ' 1 - Inventario'
         print ' 2 = Cidade'
         print ' 3 = Combate'
+        print ' 4 = Salvar Progresso'
         print ' 5 = Sair'
         op=input('Digite uma opcao ')
         if op==1:
@@ -434,14 +441,14 @@ def menu():
             cidade()
         elif op==3:
             combate()
-        #elif op==4:
-            #historia()
+        elif op==4:
+            save()
         else:
             print ' Errrou'
 
 vault=[]
 character1=''
-f = open('C:/Users/steferson/Desktop/AtividadesPython/save.txt','a')
+f = open('C:\Users\KairoBruno\Documents\save.txt','a')
 f.close()
 hp = 50
 hpmax=hp
@@ -452,8 +459,6 @@ ptlv = 5
 exp=0
 gold=0
 lv = 0
-vault=0
 savePrincipal()
-
 import random
 menu()
