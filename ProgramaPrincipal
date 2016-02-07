@@ -279,11 +279,11 @@ def npcarmas():
             print ' Vendedor: Um guerreiro entao? Tenho a disposicao varias armas, escolha a que desejar'
             for id2 in range(1,7):
                 n_arma, arma=armasfis(id2)
-                print ' Numero: ', arma[0],' -----' n_arma,'---- Nivel: ',arma[1], ' ---- Dano:', arma[2], ' ---- Preco:', arma[3]
+                print ' Numero: ', arma[0],' -----', n_arma,'---- Nivel: ',arma[1], ' ---- Dano:', arma[2], ' ---- Preco:', arma[3]
                 armaid=arma[0]
                 armagold=arma[3]
             op2=input(' Qual deseja comprar?\n 6 = Voltar a Cidade')
-            while op2!=6
+            while op2!=6:
                 if op2==0 and gold>=armagold[0]:
                     vault=armaid[0]
                     gold= gold - armagold[0]
@@ -319,6 +319,7 @@ def npcarmas():
             print ' Vendedor: Um mago correto? Tenho diversos artefatos a te oferecer'
             for id2 in range():
                 n_arma, arma=armasmag(id2)
+
 
 
 
