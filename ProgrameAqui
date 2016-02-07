@@ -1,5 +1,6 @@
 #modificacoes 06/12/2016(20:13)
 #criacao das funcoes save e savePrincipal
+#criação de objetos e NPC ARMAS (olhar 219 a 280)
 
 #NECESSARIO
 #EM ALGUMAS FUNCOES TEM UM CODIGO ASSIM >> f = open('C:/Users/steferson/Desktop/AtividadesPython/save.txt','r')
@@ -214,6 +215,82 @@ def curar():
             return 0
         else:
             print ' Opcao Incorreta'
+ 
+            
+def armasfis(id2):
+    #ARMA[ ID,NIVEL, DANO, VALORCOMPRA,VALORVENDA]
+    espadacurta=[1, 3,5,200,35]
+    n_espadacurta='Adaga'
+    gladio=[2, 6,8,280,50]
+    n_gladio=' Gladio'
+    katana=[3, 10,13,350,100]
+    n_katana=' Katana'
+    lanca=[4, 14, 17,470,150]
+    n_lanca=' Lanca'
+    machado=[5, 18, 21, 590, 190]
+    n_machado=' Machado'
+    impaladora=[6, 22, 26, 750,250]
+    n_impaladora=' Impaladora de Almas'
+    excalibur=[7, 40, 45, 0, 5000]
+    n_excalibur=' Excalibur'
+    destructor=[8, 40, 50, 0, 6000]
+    n_destructor=' Brasa Destruidora'
+    haviclegend=[9, 40, 55, 0, 7000]
+    n_haviclegend=' Havic Legendaria'
+    dragonreaper=[10, 40, 60, 0, 8000]
+    n_dragonreaper= ' Ceifadora de Dragoes'
+    if id2==1:
+        return (n_espadacurta, espadacurta)
+    elif id2==2:
+        return (n_gladio, gladio)
+    elif id2==3:
+        return (n_katana, katana)
+    elif id2==4:
+        return (n_lanca, lanca)
+    elif id2==5:
+        return (n_machado, machado)
+    elif id2==6:
+        return (n_impaladora, impaladora)
+    elif id2==7:
+        return (n_excalibur, excalibur)
+    elif id2==8:
+        return (n_destructor, destructor)
+    elif id2==9:
+        return (n_haviclegend, haviclegend)
+    else:
+        return (n_dragonreaper, dragonreaper)
+
+def npcarmas():
+    op=0
+    id2=0
+    n_arma=''
+    arma=[]
+    #ARMA[ ID,NIVEL, DANO, VALORCOMPRA,VALORVENDA]
+    while op!=4:
+        print ' Vendedor: Voce acaba de entrar na melhor loja de armas do continente, o que desejas?'
+        op=input (' 1 - Comprar uma Arma Fisica\n 2 - Comprar uma Arma Magica\n 3 - Reforcar uma Arma \n 4 - Sair')
+        if op==1:
+            print ' Vendedor: Um guerreiro entao? Tenho a disposicao varias armas, escolha a que desejar'
+            for id2 in range(1,7):
+                n_arma, arma=armasfis(id2)
+                print n_arma,'---- Nivel: ',arma[1], ' ---- Dano:', arma[2], ' ---- Preco:', arma[3]
+                
+        elif op==2:
+            print ' Vendedor: Um mago correto? Tenho diversos artefatos a te oferecer'
+            for id2 in range():
+                n_arma, arma=armasmag(id2)
+
+
+
+
+#def npcarmaduras():
+
+
+
+#def treinadorhab():
+
+
+
 
 def cidade():
     op=0
