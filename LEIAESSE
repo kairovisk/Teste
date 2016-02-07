@@ -1,0 +1,1243 @@
+Esse
+arquivo
+ta
+com
+erro
+nos
+NPC
+
+
+
+
+
+def todositens(id2):
+
+    #ARMA[ ID,NIVEL, DANO, VALORCOMPRA,VALORVENDA, HP, MANA, DEFESA]
+    espadacurta = [1, 3, 5, 200, 35, 0, 0, 0]
+    n_espadacurta = 'Adaga'
+    gladio = [2, 6, 8, 280, 50, 0, 0, 0]
+    n_gladio = ' Gladio'
+    katana = [3, 10, 13, 350, 100, 0, 0, 0]
+    n_katana = ' Katana'
+    lanca = [4, 14, 17, 470, 150, 0, 0, 0]
+    n_lanca = ' Lanca'
+    machado = [5, 18, 21, 590, 190, 0, 0, 0]
+    n_machado = ' Machado'
+    impaladora = [6, 22, 26, 750, 250, 0, 0, 0]
+    n_impaladora = ' Impaladora de Almas'
+    alabarda = [7, 26, 30, 1000, 340, 0, 0, 0]
+    n_alabarda = ' Alabarda Sem Fim'
+    perfcranios = [8, 26, 36, 1500, 400, 0, 0, 0]
+    n_perfcranios = ' Perfuradora de Cranios'
+    excalibur = [9, 40, 45, 0, 5000, 0, 0, 0]
+    n_excalibur = ' Excalibur'
+    destructor = [10, 40, 50, 0, 6000, 0, 0, 0]
+    n_destructor = ' Brasa Destruidora'
+    haviclegend = [11, 40, 55, 0, 7000, 0, 0, 0]
+    n_haviclegend = ' Havic Legendaria'
+    dragonreaper = [12, 40, 60, 0, 8000, 0, 0, 0]
+    n_dragonreaper = ' Ceifadora de Dragoes'
+    varinha = [13, 3,5,200,35, 0, 0, 0]
+    n_varinha = 'Varinha'
+    cajadodoap = [14, 6, 8, 280, 50, 0, 0, 0]
+    n_cajadodoap = ' Cajado do Aprendiz'
+    orbeeletr = [15, 10, 13, 350, 100, 0, 0, 0]
+    n_orbeeletr = ' Orbe Eletrico'
+    varinhaprof = [16, 14, 17,470,150, 0, 0, 0]
+    n_varinhaprof = ' Varinha Profana'
+    cajadodiv = [17, 18, 21, 590, 190, 0, 0, 0]
+    n_cajadodiv = ' Cajado Divisor'
+    dancavorp = [18, 22, 26, 750,250, 0, 0, 0]
+    n_dancavorp = ' Dancarina Vorpal'
+    cajadoantm = [19, 30, 1400, 450, 0, 0, 0]
+    n_cajadoantm = ' Cajado Anti Materia'
+    orbeants = [20, 40, 45, 0, 5000, 0, 0, 0]
+    n_orbeants = ' Orbe Anti Suspiro'
+    empunhagelid = [21, 40, 50, 0, 6000, 0, 0, 0]
+    n_empunhagelid = ' Empunhadura Gelida'
+    fogocaotic = [22, 40, 55, 0, 7000, 0, 0, 0]
+    n_fogocaotic = ' Fogo Caotico'
+    orbehavic = [23, 40, 60, 0, 8000, 0, 0, 0]
+    n_orbehavic = ' Orbe Havic'
+    pertudeabis = [24, 26, 30, 1000, 340, 0, 0, 0]
+    n_pertudeabis = ' Pertubadora de Abismos'
+    e_placaleve = [50, 3, 0, 60, 10, 0, 0, 1]
+    n_eplacaleve = ' Elmo de Placa Leve'
+    a_placaleve = [51, 3, 0, 60, 10, 6, 0, 2]
+    n_aplacaleve = ' Armadura de Placa Leve'
+    b_placaleve = [52, 3, 0, 60, 10, 3, 0, 0]
+    n_bplacaleve = ' Botas de Placa Leve'
+    e_placapesada = [53, 6, 0, 100, 15, 0, 0, 2]
+    n_eplacapesada = ' Elmo de Placa Pesada'
+    a_placapesada = [54, 6, 0, 100, 15, 12, 0, 4]
+    n_aplacapesada = ' Armadura de Placa Pesada'
+    b_placapesada = [55, 6, 0, 100, 15, 6, 0, 0]
+    n_bplacapesada = ' Botas de Placa Pesada'
+    e_placabronze = [56, 9, 0, 250, 40, 0, 0, 3]
+    n_eplacabronze = ' Elmo de Placa Bronze'
+    a_placabronze = [57, 9, 0, 250, 40, 18, 0, 6]
+    n_aplacabronze = ' Armadura de Placa Bronze'
+    b_placabronze = [58, 9, 0, 250, 40, 9, 0, 0]
+    n_bplacabronze = ' Botas de Placa Bronze'
+    e_combatente = [59, 12, 0, 400, 70, 0, 0, 4]
+    n_ecombatente = ' Elmo do Combatente'
+    a_combatente = [60, 12, 0, 400, 70, 24, 0, 8]
+    n_acombatente = ' Armadura do Combatente'
+    b_combatente = [61, 12, 0, 400, 70, 12, 0, 0]
+    n_bcombatente = ' Botas do Combatente'
+    e_ferrofundido = [62, 15, 0, 550, 100, 0, 0, 5]
+    n_eferrofundido = ' Elmo de Ferro Fundido'
+    a_ferrofundido = [63, 15, 0, 550, 100, 30, 0, 10]
+    n_aferrofundido = ' Armadura de Ferro Fundido'
+    b_ferrofundido = [64, 15, 0, 550, 100, 15, 0, 0]
+    n_bferrofundido = ' Botas de Ferro Fundido'
+    e_dawnstalker = [65, 18, 0, 700, 130, 0, 0, 6]
+    n_edawnstalker = ' Elmo de Aco Dawnstalker'
+    a_dawnstalker = [66, 18, 0, 700, 130, 36, 0, 12]
+    n_adawnstalker = ' Armadura de Aco Dawnstalker'
+    b_dawnstalker = [67, 18, 0, 700, 130, 18, 0, 0]
+    n_bdawnstalker = ' Botas de Aco Dawnstalker'
+    e_serpente = [68, 23, 0, 900, 180, 0, 0, 7]
+    n_eserpente = ' Elmo Couraca de Serpente'
+    a_serpente = [69, 23, 0, 900, 180, 42, 0, 14]
+    n_aserpente = ' Armadura Couraca de Serpente'
+    b_serpente = [70, 23, 0, 900, 180, 21, 0, 0]
+    n_bserpente = ' Botas Couraca de Serpente'
+    e_diamante = [71, 27, 0, 1050, 210, 0, 0, 8]
+    n_ediamante = ' Elmo de Diamante Reluzente'
+    a_diamante = [72, 27, 0, 1050, 210, 42, 0, 16]
+    n_adiamante = ' Armadura de Diamante Reluzente'
+    b_diamante = [73, 27, 0, 1050, 210, 24, 0, 0]
+    n_bdiamante = ' Botas de Diamante Reluzente'
+    e_sombras = [74, 31, 0, 1250, 250, 0, 0, 9]
+    n_esombras = ' Elmo das Sombras'
+    a_sombras = [75, 31, 0, 1250, 250, 54, 0, 18]
+    n_asombras = ' Armadura das Sombras'
+    b_sombras = [76, 31, 0, 1250, 250, 27, 0, 0]
+    n_bsombras = ' Botas das Sombras'
+    e_placashavic = [77, 35, 0, 1500, 300, 0, 0, 10]
+    n_eplacashavic = ' Elmo Havic'
+    a_placashavic = [78, 35, 0, 1500, 300, 60, 0, 20]
+    n_aplacashavic = ' Armadura Havic'
+    b_placashavic = [79, 35, 0, 1500, 300, 25, 0, 0]
+    n_bplacashavic = ' Botas Havic'
+    e_draconico = [80, 40, 0, 'x', 500, 0, 0, 12]
+    n_edraconico = ' Elmo de Osso Draconico'
+    a_draconico = [81, 40, 0, 'x', 500, 65, 0, 23]
+    n_adraconico = ' Elmo de Osso Draconico'
+    b_draconico = [82, 40, 0, 'x', 500, 35, 0, 0]
+    n_bdraconico = ' Elmo de Osso Draconico'
+
+
+
+    if id2 == 1:
+        return n_espadacurta, espadacurta
+    elif id2 == 2:
+        return n_gladio, gladio
+    elif id2 == 3:
+        return n_katana, katana
+    elif id2 == 4:
+        return n_lanca, lanca
+    elif id2 == 5:
+        return n_machado, machado
+    elif id2 == 6:
+        return n_impaladora, impaladora
+    elif id2 == 7:
+        return n_alabarda, alabarda
+    elif id2 == 8:
+        return n_perfcranios, perfcranios
+    elif id2 == 9:
+        return n_excalibur, excalibur
+    elif id2 == 10:
+        return n_destructor, destructor
+    elif id2 == 11:
+        return n_haviclegend, haviclegend
+    elif id2 == 12:
+        return n_dragonreaper, dragonreaper
+    elif id2 == 13:
+        return n_varinha, varinha
+    elif id2 == 14:
+        return n_cajadodoap, cajadodoap
+    elif id2 == 15:
+        return n_orbeeletr, orbeeletr
+    elif id2 == 16:
+        return n_varinhaprof, varinhaprof
+    elif id2 == 17:
+        return n_cajadodiv, cajadodiv
+    elif id2 == 18:
+        return n_dancavorp, dancavorp
+    elif id2 == 19:
+        return n_cajadoantm, cajadoantm
+    elif id2 == 20:
+        return n_orbeants, orbeants
+    elif id2 == 21:
+        return n_empunhagelid, empunhagelid
+    elif id == 22:
+        return n_fogocaotic, fogocaotic
+    elif id2 == 23:
+        return n_orbehavic, orbehavic
+    elif id2 == 24:
+        return n_pertudeabis, pertudeabis
+    elif id2 == 50:
+        return n_eplacaleve, e_placaleve
+    elif id2 == 51:
+        return n_aplacaleve, a_placaleve
+    elif id2 == 52:
+        return n_bplacaleve, b_placaleve
+    elif id2 == 53:
+        return n_eplacapesada, e_placapesada
+    elif id2 == 54:
+        return n_aplacapesada,  a_placapesada
+    elif id2 == 55:
+        return n_bplacapesada, b_placapesada
+    elif id2 == 56:
+        return n_eplacabronze, e_placabronze
+    elif id2 == 57:
+        return n_aplacabronze, a_placabronze
+    elif id2 == 58:
+        return n_bplacabronze, b_placabronze
+    elif id2 == 59:
+        return n_ecombatente, e_combatente
+    elif id2 == 60:
+        return n_acombatente, a_combatente
+    elif id2 == 61:
+        return n_bcombatente, b_combatente
+    elif id2 == 62:
+        return n_eferrofundido, e_ferrofundido
+    elif id2 == 63:
+        return n_aferrofundido, a_ferrofundido
+    elif id2 == 64:
+        return n_bferrofundido, b_ferrofundido
+    elif id2 == 65:
+        return n_edawnstalker, e_dawnstalker
+    elif id2 == 66:
+        return n_adawnstalker, a_dawnstalker
+    elif id2 == 67:
+        return n_bdawnstalker, b_dawnstalker
+    elif id2 == 68:
+        return n_eserpente, e_serpente
+    elif id2 == 69:
+        return n_aserpente, a_serpente
+    elif id2 == 70:
+        return n_bserpente, b_serpente
+    elif id2 == 71:
+        return n_ediamante, e_diamante
+    elif id2 == 72:
+        return n_adiamante, a_diamante
+    elif id2 == 73:
+        return n_bdiamante, b_diamante
+    elif id2 == 74:
+        return n_esombras, e_sombras
+    elif id2 == 75:
+        return n_asombras, a_sombras
+    elif id2 == 76:
+        return n_bsombras, b_sombras
+    elif id2 == 77:
+        return n_eplacashavic, e_placashavic
+    elif id2 == 78:
+        return n_aplacashavic, a_placashavic
+    elif id2 == 79:
+        return n_bplacashavic, b_placashavic
+    elif id == 80:
+        return n_edraconico, e_draconico
+    elif id2 == 81:
+        return n_adraconico, a_draconico
+    else:
+        return n_bdraconico, b_draconico
+
+
+
+def monstro_flores_inic_facil(repeat):
+
+    monstro_selec = 0
+    nome=''
+    #nos mnstros [NIVEL, VIDA, ATAQUE, DEFESA, EXP, GOLD]
+    cao_selvagem = [2, 15, 6, 2, 10, 20]
+    serpente = [1, 10, 5, 0, 5, 15]
+    lobo_filhote = [2, 20, 6, 3, 15, 20]
+    lobo = [3, 20, 8, 4, 20, 25]
+    aranha = [2, 15, 4, 1, 8, 20]
+    macaco_ancestral = [5, 35, 12, 6, 30, 40]
+    if repeat == 5:
+        nomemonstro = 'Rei Macaco'
+        return nomemonstro, macaco_ancestral
+    monstro_selec = random.randint(1,26)
+    if monstro_selec >= 1 and monstro_selec < 6:
+        nomemonstro='Cao Selvagem'
+        return nomemonstro, cao_selvagem
+    elif monstro_selec >= 6 and monstro_selec < 10:
+        nomemonstro='Serpente'
+        return nomemonstro , serpente
+    elif monstro_selec >= 10 and monstro_selec < 16:
+        nomemonstro='Filhote de Lobo'
+        return nomemonstro, lobo_filhote
+    elif monstro_selec >= 16 and monstro_selec < 20:
+        nomemonstro = 'Lobo'
+        return nomemonstro, lobo
+    else:
+        nomemonstro = 'Aranha'
+        return (nomemonstro, aranha)
+
+
+def floresta_iniciante():
+    import random
+    global hp, mana, ataque, defesa, lv, ptlv, exp, gold, character1
+    op_continuar = 1
+    op_iniciar = 1
+    atk = 0
+    monstro = []
+    goldwin = 0
+    defm=0
+    nome_monstro = ''
+    repeat = 0
+    while op_continuar == 1:
+        repeat = repeat+1
+        nome_monstro, monstro = monstro_flores_inic_facil(repeat)
+        if repeat==5:
+            print'Voce encontrou o terrivel ', nome_monstro,' ele contem itens bons'
+        else:
+            print ' Voce esta andando pela floresta e encontra um(a) ', nome_monstro, ' Nivel ', monstro[0]
+            print ' O Combate vai comecar!'
+            #nos monstros [NIVEL, VIDA, ATAQUE, DEFESA, EXP, GOLD]
+        while monstro[1]>0:
+            acao=input (' E o seu turno, O que ira fazer? \n 1 - Atacar fisicamente\n 2 - Atacar com Magia\n 3 - Se Curar\n')
+            if acao==1:
+                    #ataque=int(ataque)
+                    #defm=int(monstro[4])
+                atk=random.randint(monstro[3],ataque)
+                monstro[1]=monstro[1]-atk
+                if atk==ataque-monstro[3]:
+                    print ' Critical Hit!!!'
+                print 'Voce deu ',(atk),' de dano, agora', nome_monstro,' possui', monstro[1], ' de vida\n'
+                if monstro[1]>0:
+                    print ' E o turno de', nome_monstro
+                        #atk=int(monstro[2])
+                        #defesa=int(defesa)
+                    atk=random.randint(defesa,monstro[2])
+                    hp=hp-atk
+                    print nome_monstro,' Ataca e voce perde', atk,' de vida\n'
+                    if hp<=0:
+                        print ' Voce morreu, retornando para o Templo\n'
+                        curar()
+
+                    print ' Voce possui ', hp, ' de vida'
+        exp = exp+monstro[4]
+        atk = monstro[5]
+        goldwin = random.randint(1,atk)
+        gold = gold+goldwin
+        print ' Voce ganhou ', goldwin,' de GOLD por matar', nome_monstro
+        print ' Voce possui ', hp, ' de vida'
+        if exp >= 50:
+            print ' Voce passou de nivel e ganhou 3 Pontos de Caracteristica'
+            ptlv = ptlv+3
+            lv = lv+1
+            exp = exp-50
+        if repeat == 5:
+            repeat = 0
+        op_continuar = input(' Deseja continuar? \n 1 - SIM\n 2 - NAO      ')
+    save()
+    return 0
+
+
+def combate():
+    op_combate = 0
+    while op_combate !=6:
+        print '\n\n 1 - Floresta do Iniciante\n 2 - Cabana Abandonada\n 3 - Cemiterio Amaldicoado'
+        print ' 4 - Deserto Escaldante\n 5 - Cidade Perdida\n 6 - Cancelar\n '
+        op_combate = input ('  Voce entrou no modo de combate, por favor selecione o local onde ira cacar\n')
+        if op_combate == 1:
+            floresta_iniciante()
+        #elif op_combate==2:
+            #cabana_abandonada()
+        #elif op_combate==3:
+#cemiterio_amaldi()
+        #elif op_combate==4:
+#deserto_escald()
+        #elif op_combate==5:
+#cidade_perdida()
+        elif op_combate == 6:
+            return 0
+        else:
+            print 'Opcao Invalida'
+
+
+def inventario():
+    armaid = []
+    armaid2 = []
+    n_item= ''
+    global hp, mana, ataque, defesa, lv, ptlv, exp, gold, character1, hpmax, atkmax, manamax, defesamax
+    if len(vault) == 0:
+        print '\n\n\n'
+        print ' GOLD = ',gold
+        print ' Inventario Vazio'
+        print '\n\n\n'
+    else:
+        print '\n\n\n'
+        print ' Este e o inventario de ', character1
+        print ' GOLD = ', gold
+        for id2 in vault:
+            n_item, arma = armasfis(id2)
+            print ' Numero: ', arma[0], ' -----', n_item, '---- Nivel: ', arma[1], ' ---- Dano:', arma[2]
+        op_item = input(' Selecione qual item ira usar (NUMERO):   ')
+        armaid = todositens(op_item)
+        armaid2 = armaid
+        if lv < armaid[1]:
+            print ' Nivel Insuficiente\n\n'
+        else:
+            #ARMA[ ID,NIVEL, DANO, VALORCOMPRA,VALORVENDA, HP, MANA, DEFESA, PECA]
+            if armaid[8] == 9:
+                ataque=0
+                ataque=atkmax+armaid[2]
+                print armaid, '   Arma Equipada com Sucesso'
+                return 0
+            elif armaid[8] == 8:
+                hp = hp - armaid2[5]
+                hp = hp + armaid[5]
+                mana = mana - armaid2[6]
+                mana = mana + armaid[6]
+                defesa = defesa - armaid2[7]
+                defesa = defesa + armaid[7]
+                print armaid, '   Botas Equipadas com Sucesso'
+                return 0
+            elif armaid[8] == 7:
+                hp = hp - armaid2[5]
+                hp = hp + armaid[5]
+                mana = mana - armaid2[6]
+                mana = mana + armaid[6]
+                defesa = defesa - armaid2[7]
+                defesa = defesa + armaid[7]
+                print armaid, '   Armadura Equipada com Sucesso'
+                return 0
+            elif armaid[8] == 6:
+                hp = hp - armaid2[5]
+                hp = hp + armaid[5]
+                mana = mana - armaid2[6]
+                mana = mana + armaid[6]
+                defesa = defesa - armaid2[7]
+                defesa = defesa + armaid[7]
+                print armaid, '   Elmo Equipado com Sucesso'
+                return 0
+
+
+def personagem():
+    global hp,mana,ataque,defesa,lv,ptlv,exp,gold,character1, hpmax, atkmax, manamax, defesamax
+    print ' Caracteristicas de ', character1
+    print ' Nivel = ', lv
+    print ' VIDA ATUAL = ', hp
+    print ' HP MAXIMA = ',hpmax
+    print ' MANA = ', mana
+    print ' Ataque = ', ataque
+    print ' Defesa = ', defesa
+    print ' Experiencia = ', exp
+    print ' GOLD = ', gold
+    print ' Experiencia necessaria para o proximo nivel = ', (50-exp)
+    while ptlv > 0:
+        print ' Voce tem pontos de nivel disponivel, por favor distribua-os'
+        print '             1 - HP \n             2 - MANA \n             3 - Ataque \n             4 - Defesa \n             Pontos = ',ptlv
+        op_pontos = input(' Onde deseja adicionar seus pontos?      ')
+        if op_pontos == 1:
+            if ptlv > 0:
+                op_pontos2 = input ('\n Quantos?    ')
+                if op_pontos2>ptlv or op_pontos2<0:
+                    print  ' Quantidade invalida'
+                else:
+                    hpmax += op_pontos2*3
+                    ptlv = ptlv-op_pontos2
+                    print ' Adicionado com Sucesso '
+        elif op_pontos == 2:
+            if ptlv > 0:
+                op_pontos2 = input ('\n Quantos?')
+                if op_pontos2 > ptlv or op_pontos2<0:
+                    print' Quantidade invalida'
+                else:
+                    mana = mana+op_pontos2*2
+                    ptlv = ptlv-op_pontos2
+                    print ' Adicionado com Sucesso '
+        elif op_pontos == 3:
+            if ptlv > 0:
+                op_pontos2 = input ('\n Quantos?')
+                if op_pontos2 > ptlv or op_pontos2<0:
+                    print' Quantidade invalida'
+                else:
+                    ataque = ataque+op_pontos2
+                    ptlv = ptlv-op_pontos2
+                    print ' Adicionado com Sucesso\n\n\n '
+        elif op_pontos == 4:
+            if ptlv > 0:
+                op_pontos2 = input ('\n Quantos?')
+                if op_pontos2>ptlv or op_pontos2<0:
+                    print' Quantidade invalida\n'
+                else:
+                    defesa = defesa+op_pontos2
+                    ptlv = ptlv-op_pontos2
+                    print ' Adicionado com Sucesso \n \n '
+
+
+def curar():
+    global hp, mana, ataque, defesa, lv, ptlv, exp, gold, character1
+    porc = 0
+    if hp <= 0:
+        print ' Sacerdote: Conseguimos te ressuscitar antes que sua alma fosse perdida para sempre'
+        print ' Sacerdote: Iremos te curar'
+        hp = hpmax
+        print ' Sacerdote: Caput mortuum imperet tibi Dominus per Adam lotchavah!'
+        print ' Sacerdote: Aquila errans, imperet tibi Dominus tetragrammaton per Angelum et leonem!'
+        print ' Sacerdote: Michael, Gabriel, Raphael, Anael!'
+        print ' Sacerdote: Pluat udor per spiritu Elohimm. Maneat Terra per Adam, Jatchivah.'
+        print ' Sacerdote: Fiat Jadictum per ignem in virtude Michael'
+        print ' \n\n Voce foi curado e esta com a vida em 100%'
+        print ' Voce perdeu 25% do seu GOLD'
+        porc = gold *0,25
+        gold = gold-porc
+        cidade()
+    op = 0
+    while op != 2:
+        print ' Avloush Keevar Soldado, o que desejas?'
+        op = input ( ' 1 - Se Curar(Necessita Gold)\n 2 - Voltar')
+        if op == 1:
+            porc = gold/10
+            print ' Para te curar foi necessario', porc,' do seu gold'
+            hp = hpmax
+        elif op == 2:
+            return 0
+        else:
+            print ' Opcao Incorreta'
+ 
+            
+def armasfis(id2):
+    #ARMA[ ID,NIVEL, DANO, VALORCOMPRA,VALORVENDA]
+    espadacurta = [1, 3,5,200,35]
+    n_espadacurta = 'Adaga'
+    gladio = [2, 6,8,280,50]
+    n_gladio = ' Gladio'
+    katana = [3, 10,13,350,100]
+    n_katana = ' Katana'
+    lanca = [4, 14, 17,470,150]
+    n_lanca = ' Lanca'
+    machado = [5, 18, 21, 590, 190]
+    n_machado = ' Machado'
+    impaladora = [6, 22, 26, 750,250, 0, 0, 0]
+    n_impaladora = ' Impaladora de Almas'
+    alabarda = [7, 26, 30, 1000, 340, 0, 0, 0]
+    n_alabarda = ' Alabarda Sem Fim'
+    perfcranios = [8, 26, 36, 1500, 400, 0, 0, 0]
+    n_perfcranios = ' Perfuradora de Cranios'
+    excalibur = [9, 40, 45, 0, 5000, 0, 0, 0]
+    n_excalibur = ' Excalibur'
+    destructor = [10, 40, 50, 0, 6000, 0, 0, 0]
+    n_destructor = ' Brasa Destruidora'
+    haviclegend = [11, 40, 55, 0, 7000, 0, 0, 0]
+    n_haviclegend = ' Havic Legendaria'
+    dragonreaper = [12, 40, 60, 0, 8000, 0, 0, 0]
+    n_dragonreaper = ' Ceifadora de Dragoes'
+    if id2 == 1:
+        return n_espadacurta, espadacurta
+    elif id2 == 2:
+        return n_gladio, gladio
+    elif id2 == 3:
+        return n_katana, katana
+    elif id2 == 4:
+        return n_lanca, lanca
+    elif id2 == 5:
+        return n_machado, machado
+    elif id2 == 6:
+        return n_impaladora, impaladora
+    elif id2 == 7:
+        return n_alabarda, alabarda
+    elif id2 == 8:
+        return n_perfcranios, perfcranios
+    elif id2 == 9:
+        return n_excalibur, excalibur
+    elif id2 == 10:
+        return n_destructor, destructor
+    elif id2 == 11:
+        return n_haviclegend, haviclegend
+    else:
+        return n_dragonreaper, dragonreaper
+
+
+def armasmag(id2):
+    varinha = [13, 3,5,200,35, 0, 0, 0]
+    n_varinha = 'Varinha'
+    cajadodoap = [14, 6, 8, 280, 50, 0, 0, 0]
+    n_cajadodoap = ' Cajado do Aprendiz'
+    orbeeletr = [15, 10, 13, 350, 100, 0, 0, 0]
+    n_orbeeletr = ' Orbe Eletrico'
+    varinhaprof = [16, 14, 17,470,150, 0, 0, 0]
+    n_varinhaprof = ' Varinha Profana'
+    cajadodiv = [17, 18, 21, 590, 190, 0, 0, 0]
+    n_cajadodiv = ' Cajado Divisor'
+    dancavorp = [18, 22, 26, 750,250, 0, 0, 0]
+    n_dancavorp = ' Dancarina Vorpal'
+    cajadoantm = [19, 30, 1400, 450, 0, 0, 0]
+    n_cajadoantm = ' Cajado Anti Materia'
+    orbeants = [20, 40, 45, 0, 5000, 0, 0, 0]
+    n_orbeants = ' Orbe Anti Suspiro'
+    empunhagelid = [21, 40, 50, 0, 6000, 0, 0, 0]
+    n_empunhagelid = ' Empunhadura Gelida'
+    fogocaotic = [22, 40, 55, 0, 7000, 0, 0, 0]
+    n_fogocaotic = ' Fogo Caotico'
+    orbehavic = [23, 40, 60, 0, 8000, 0, 0, 0]
+    n_orbehavic = ' Orbe Havic'
+    pertudeabis = [24, 26, 30, 1000, 340, 0, 0, 0]
+    n_pertudeabis = ' Pertubadora de Abismos'
+    if id2 == 13:
+        return n_varinha, varinha
+    elif id2 == 14:
+        return n_cajadodoap, cajadodoap
+    elif id2 == 15:
+        return n_orbeeletr, orbeeletr
+    elif id2 == 16:
+        return n_varinhaprof, varinhaprof
+    elif id2 == 17:
+        return n_cajadodiv, cajadodiv
+    elif id2 == 18:
+        return n_dancavorp, dancavorp
+    elif id2 == 19:
+        return n_cajadoantm, cajadoantm
+    elif id2 == 20:
+        return n_orbeants, orbeants
+    elif id2 == 21:
+        return n_empunhagelid, empunhagelid
+    elif id == 22:
+        return n_fogocaotic, fogocaotic
+    elif id2 == 23:
+        return n_orbehavic, orbehavic
+    else:
+        return n_pertudeabis, pertudeabis
+
+
+def npcarmas():
+
+    op = 0
+    global vault, gold
+    op2 = 0
+    compra = 1
+    id2 = 0
+    n_arma = ''
+    arma = []
+    armaid = []
+    armagold = []
+    '# ARMA[ ID,NIVEL, DANO, VALORCOMPRA, VALORVENDA]'
+    while op != 4:
+        print ' Vendedor: Voce acaba de entrar na melhor loja de armas do continente, o que desejas?'
+        op = input (' 1 - Comprar uma Arma Fisica\n 2 - Comprar uma Arma Magica\n 3 - Reforcar uma Arma \n 4 - Sair')
+        if op == 1:
+            print ' Vendedor: Um guerreiro entao? Tenho a disposicao varias armas, escolha a que desejar'
+            for id2 in range(1,7):
+                n_arma, arma=armasfis(id2)
+                print ' Numero: ', arma[0], ' -----', n_arma, '---- Nivel: ', arma[1], ' ---- Dano:', arma[2], ' ---- Preco:', arma[3]
+                armaid.append(arma[0])
+                armagold.append(arma[3])
+                op2 = input(' Qual deseja comprar?(NUMERO)\n 9 = Voltar a Cidade')
+                if op2 == 1 and gold >= armagold[0]:
+                    vault=armaid[0]
+                    gold = gold - armagold[0]
+                    compra = 0
+                elif op2 == 2 and gold >= armagold[1]:
+                    vault=armaid[1]
+                    gold = gold - armagold[1]
+                    compra = 0
+                elif op == 3 and gold >= armagold[2]:
+                    vault = armaid[2]
+                    gold = gold - armagold[2]
+                    compra = 0
+                elif op2 == 4 and gold >= armagold[3]:
+                    vault = armaid[3]
+                    gold = gold - armagold[3]
+                    compra = 0
+                elif op == 5 and gold >= armagold[4]:
+                    vault = armaid[4]
+                    gold = gold - armagold[4]
+                    compra = 0
+                elif op2 == 6 and gold >= armagold[5]:
+                    vault=armaid[5]
+                    gold = gold - armagold[5]
+                    compra = 0
+                elif op2 == 7 and gold >= armagold[6]:
+                    vault = armaid[6]
+                    gold = gold - armagold[6]
+                    compra = 0
+                elif op == 8 and gold >= armagold[7]:
+                    vault = armaid[7]
+                    gold = gold - armagold[7]
+                    compra = 0
+                elif op == 9:
+                    return 0
+                elif compra == 1:
+                    print ' GOLD insuficiente'
+                    return 0
+                else:
+                    print' Opcao invalida'
+        elif op == 2:
+            print ' Vendedor: Um mago correto? Tenho diversos artefatos a te oferecer'
+            for id2 in range(1,7):
+                n_arma, arma=armasmag(id2)
+                print ' Numero: ', arma[0], ' -----', n_arma, '---- Nivel: ', arma[1], ' ---- Dano:', arma[2], ' ---- Preco:', arma[3]
+                armaid.append(arma[0])
+                armagold.append(arma[3])
+                op2 = input(' Qual deseja comprar?(NUMERO)\n 9 = Voltar a Cidade')
+                if op2 == 13 and gold >= armagold[0]:
+                    vault=armaid[0]
+                    gold = gold - armagold[0]
+                    compra = 0
+                elif op2 == 14 and gold >= armagold[1]:
+                    vault=armaid[1]
+                    gold = gold - armagold[1]
+                    compra = 0
+                elif op == 15 and gold >= armagold[2]:
+                    vault = armaid[2]
+                    gold = gold - armagold[2]
+                    compra = 0
+                elif op2 == 16 and gold >= armagold[3]:
+                    vault = armaid[3]
+                    gold = gold - armagold[3]
+                    compra = 0
+                elif op == 17 and gold >= armagold[4]:
+                    vault = armaid[4]
+                    gold = gold - armagold[4]
+                    compra = 0
+                elif op2 == 18 and gold >= armagold[5]:
+                    vault=armaid[5]
+                    gold = gold - armagold[5]
+                    compra = 0
+                elif op2 == 19 and gold >= armagold[6]:
+                    vault = armaid[6]
+                    gold = gold - armagold[6]
+                    compra = 0
+                elif op == 20 and gold >= armagold[7]:
+                    vault = armaid[7]
+                    gold = gold - armagold[7]
+                    compra = 0
+                elif op == 9:
+                    return 0
+                elif compra == 1:
+                    print ' GOLD insuficiente'
+                    return 0
+                else:
+                    print' Opcao invalida'
+
+
+def elmos(id2):
+    e_placaleve = [50, 3, 0, 60, 10, 0, 0, 1]
+    n_eplacaleve = ' Elmo de Placa Leve'
+    e_placapesada = [53, 6, 0, 100, 15, 0, 0, 2]
+    n_eplacapesada = ' Elmo de Placa Pesada'
+    e_placabronze = [56, 9, 0, 250, 40, 0, 0, 3]
+    n_eplacabronze = ' Elmo de Placa Bronze'
+    e_combatente = [59, 12, 0, 400, 70, 0, 0, 4]
+    n_ecombatente = ' Elmo do Combatente'
+    e_ferrofundido = [62, 15, 0, 550, 100, 0, 0, 5]
+    n_eferrofundido = ' Elmo de Ferro Fundido'
+    e_dawnstalker = [65, 18, 0, 700, 130, 0, 0, 6]
+    n_edawnstalker = ' Elmo de Aco Dawnstalker'
+    e_serpente = [68, 23, 0, 900, 180, 0, 0, 7]
+    n_eserpente = ' Elmo Couraca de Serpente'
+    e_diamante = [71, 27, 0, 1050, 210, 0, 0, 8]
+    n_ediamante = ' Elmo de Diamante Reluzente'
+    e_sombras = [74, 31, 0, 1250, 250, 0, 0, 9]
+    n_esombras = ' Elmo das Sombras'
+    e_placashavic = [77, 35, 0, 1500, 300, 0, 0, 10]
+    n_eplacashavic = ' Elmo Havic'
+    e_draconico = [80, 40, 0, 'x', 500, 0, 0, 12]
+    n_edraconico = ' Elmo de Osso Draconico'
+    if id2 == 50:
+        return n_eplacaleve, e_placaleve
+    elif id2 == 53:
+        return n_eplacapesada, e_placapesada
+    elif id2 == 56:
+        return n_eplacabronze, e_placabronze
+    elif id2 == 59:
+        return n_ecombatente, e_combatente
+    elif id2 == 62:
+        return n_eferrofundido, e_ferrofundido
+    elif id2 == 65:
+        return n_edawnstalker, e_dawnstalker
+    elif id2 == 68:
+        return n_eserpente, e_serpente
+    elif id2 == 71:
+        return n_ediamante, e_diamante
+    elif id2 == 74:
+        return n_esombras, e_sombras
+    elif id2 == 77:
+        return n_eplacashavic, e_placashavic
+    else:
+        return n_edraconico, e_draconico
+
+
+def armaduras(id2):
+    a_placaleve = [51, 3, 0, 60, 10, 6, 0, 2]
+    n_aplacaleve = ' Armadura de Placa Leve'
+    a_placapesada = [54, 6, 0, 100, 15, 12, 0, 4]
+    n_aplacapesada = ' Armadura de Placa Pesada'
+    a_placabronze = [57, 9, 0, 250, 40, 18, 0, 6]
+    n_aplacabronze = ' Armadura de Placa Bronze'
+    a_combatente = [60, 12, 0, 400, 70, 24, 0, 8]
+    n_acombatente = ' Armadura do Combatente'
+    a_ferrofundido = [63, 15, 0, 550, 100, 30, 0, 10]
+    n_aferrofundido = ' Armadura de Ferro Fundido'
+    a_dawnstalker = [66, 18, 0, 700, 130, 36, 0, 12]
+    n_adawnstalker = ' Armadura de Aco Dawnstalker'
+    a_serpente = [69, 23, 0, 900, 180, 42, 0, 14]
+    n_aserpente = ' Armadura Couraca de Serpente'
+    a_diamante = [72, 27, 0, 1050, 210, 42, 0, 16]
+    n_adiamante = ' Armadura de Diamante Reluzente'
+    a_sombras = [75, 31, 0, 1250, 250, 54, 0, 18]
+    n_asombras = ' Armadura das Sombras'
+    a_placashavic = [78, 35, 0, 1500, 300, 60, 0, 20]
+    n_aplacashavic = ' Armadura Havic'
+    a_draconico = [81, 40, 0, 'x', 500, 65, 0, 23]
+    n_adraconico = ' Armadura de Osso Draconico'
+    if id2 == 51:
+        return n_aplacaleve, a_placaleve
+    elif id2 == 54:
+        return n_aplacapesada,  a_placapesada
+    elif id2 == 57:
+        return n_aplacabronze, a_placabronze
+    elif id2 == 60:
+        return n_acombatente, a_combatente
+    elif id2 == 63:
+        return n_aferrofundido, a_ferrofundido
+    elif id2 == 66:
+        return n_adawnstalker, a_dawnstalker
+    elif id2 == 69:
+        return n_aserpente, a_serpente
+    elif id2 == 72:
+        return n_adiamante, a_diamante
+    elif id2 == 75:
+        return n_asombras, a_sombras
+    elif id2 == 78:
+        return n_aplacashavic, a_placashavic
+    else:
+        return n_adraconico, a_draconico
+
+
+def botas(id2):
+    b_placaleve = [52, 3, 0, 60, 10, 3, 0, 0]
+    n_bplacaleve = ' Botas de Placa Leve'
+    b_placapesada = [55, 6, 0, 100, 15, 6, 0, 0]
+    n_bplacapesada = ' Botas de Placa Pesada'
+    b_placabronze = [58, 9, 0, 250, 40, 9, 0, 0]
+    n_bplacabronze = ' Botas de Placa Bronze'
+    b_combatente = [61, 12, 0, 400, 70, 12, 0, 0]
+    n_bcombatente = ' Botas do Combatente'
+    b_ferrofundido = [64, 15, 0, 550, 100, 15, 0, 0]
+    n_bferrofundido = ' Botas de Ferro Fundido'
+    b_dawnstalker = [67, 18, 0, 700, 130, 18, 0, 0]
+    n_bdawnstalker = ' Botas de Aco Dawnstalker'
+    b_serpente = [70, 23, 0, 900, 180, 21, 0, 0]
+    n_bserpente = ' Botas Couraca de Serpente'
+    b_diamante = [73, 27, 0, 1050, 210, 24, 0, 0]
+    n_bdiamante = ' Botas de Diamante Reluzente'
+    b_sombras = [76, 31, 0, 1250, 250, 27, 0, 0]
+    n_bsombras = ' Botas das Sombras'
+    b_placashavic = [79, 35, 0, 1500, 300, 25, 0, 0]
+    n_bplacashavic = ' Botas Havic'
+    b_draconico = [82, 40, 0, 'x', 500, 35, 0, 0]
+    n_bdraconico = ' Botas de Osso Draconico'
+    if id2 == 52:
+        return n_bplacaleve, b_placaleve
+    elif id2 == 52:
+        return n_bplacaleve, b_placaleve
+    elif id2 == 55:
+        return n_bplacapesada, b_placapesada
+    elif id2 == 58:
+        return n_bplacabronze, b_placabronze
+    elif id2 == 61:
+        return n_bcombatente, b_combatente
+    elif id2 == 64:
+        return n_bferrofundido, b_ferrofundido
+    elif id2 == 67:
+        return n_bdawnstalker, b_dawnstalker
+    elif id2 == 70:
+        return n_bserpente, b_serpente
+    elif id2 == 73:
+        return n_bdiamante, b_diamante
+    elif id2 == 76:
+        return n_bsombras, b_sombras
+    elif id2 == 79:
+        return n_bplacashavic, b_placashavic
+    else:
+        return n_bdraconico, b_draconico
+
+
+def npcarmaduras():
+    op = 0
+    global vault, gold
+    op2 = 0
+    compra = 1
+    id2 = 0
+    n_arma = ''
+    arma = []
+    itemid = []
+    itemgold = []
+    i=0
+    print ' Bem vindo a maior Loja de Armaduras de  Havic'
+    op = input(' 1 = Elmos\n 2 = Armaduras\n 3 = Botas\n 4 = Sair         :')
+    if op == 1:
+        for id2 in range(50,79):
+            n_arma, arma=elmos(id2)
+            print ' Numero: ', arma[0], ' -----', n_arma, '---- Nivel: ', arma[1], ' ---- Dano:', arma[2], ' ---- Preco:', arma[3]
+            itemid.append(arma[0])
+            itemgold.append(arma[3])
+        op2 = input(' Qual deseja comprar? ')
+        if op2 == 50 and gold >= itemgold[0]:
+            vault.append (itemid[0])
+            gold = float(gold - itemgold[0])
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 53 and gold >= itemgold[1]:
+            vault.append(itemid[1])
+            gold = float(gold - itemgold[1])
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 56 and gold >= itemgold[2]:
+            vault.append(itemid[2])
+            gold = gold - itemgold[2]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 59 and gold >= itemgold[3]:
+            vault.append(itemid[3])
+            gold = gold - itemgold[3]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 62 and gold >= itemgold[4]:
+            vault.append(itemid[4])
+            gold = gold - itemgold[4]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 65 and gold >= itemgold[5]:
+            vault.append(itemid[5])
+            gold = gold - itemgold[5]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 68 and gold >= itemgold[6]:
+            vault.append(itemid[6])
+            gold = gold - itemgold[6]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 71 and gold >= itemgold[7]:
+            vault.append(itemid[7])
+            gold = gold - itemgold[7]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 74 and gold >= itemgold[8]:
+            vault.append(itemid[8])
+            gold = gold - itemgold[8]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 77 and gold >= itemgold[9]:
+            vault.append(itemid[9])
+            gold = gold - itemgold[9]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif compra == 1:
+            print ' GOLD insuficiente'
+            return 0
+        else:
+            print' Opcao invalida'
+
+    elif op == 2:
+        for id2 in range(50,79):
+            n_arma, arma=armaduras(id2)
+            print ' Numero: ', arma[0], ' -----', n_arma, '---- Nivel: ', arma[1], ' ---- Dano:', arma[2], ' ---- Preco:', arma[3]
+            itemid.append(arma[0])
+            itemgold.append(arma[3])
+        op2 = input(' Qual deseja comprar? ')
+        if op2 == 51 and gold >= itemgold[0]:
+            vault.append (itemid[0])
+            gold = float(gold - itemgold[0])
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 54 and gold >= itemgold[1]:
+            vault.append(itemid[1])
+            gold = float(gold - itemgold[1])
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 57 and gold >= itemgold[2]:
+            vault.append(itemid[2])
+            gold = gold - itemgold[2]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 60 and gold >= itemgold[3]:
+            vault.append(itemid[3])
+            gold = gold - itemgold[3]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 63 and gold >= itemgold[4]:
+            vault.append(itemid[4])
+            gold = gold - itemgold[4]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 66 and gold >= itemgold[5]:
+            vault.append(itemid[5])
+            gold = gold - itemgold[5]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 69 and gold >= itemgold[6]:
+            vault.append(itemid[6])
+            gold = gold - itemgold[6]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 72 and gold >= itemgold[7]:
+            vault.append(itemid[7])
+            gold = gold - itemgold[7]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 75 and gold >= itemgold[8]:
+            vault.append(itemid[8])
+            gold = gold - itemgold[8]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 78 and gold >= itemgold[9]:
+            vault.append(itemid[9])
+            gold = gold - itemgold[9]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif compra == 1:
+            print ' GOLD insuficiente'
+            return 0
+        else:
+            print' Opcao invalida'
+
+    elif op == 3:
+        for id2 in range(50,79):
+            n_arma, arma=botas(id2)
+            print ' Numero: ', arma[0], ' -----', n_arma, '---- Nivel: ', arma[1], ' ---- Dano:', arma[2], ' ---- Preco:', arma[3]
+            itemid.append(arma[0])
+            itemgold.append(arma[3])
+        op2 = input(' Qual deseja comprar? ')
+        if op2 == 52 and gold >= itemgold[0]:
+            vault.append (itemid[0])
+            gold = float(gold - itemgold[0])
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 55 and gold >= itemgold[1]:
+            vault.append(itemid[1])
+            gold = float(gold - itemgold[1])
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 58 and gold >= itemgold[2]:
+            vault.append(itemid[2])
+            gold = gold - itemgold[2]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 61 and gold >= itemgold[3]:
+            vault.append(itemid[3])
+            gold = gold - itemgold[3]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 64 and gold >= itemgold[4]:
+            vault.append(itemid[4])
+            gold = gold - itemgold[4]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 67 and gold >= itemgold[5]:
+            vault.append(itemid[5])
+            gold = gold - itemgold[5]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 70 and gold >= itemgold[6]:
+            vault.append(itemid[6])
+            gold = gold - itemgold[6]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 73 and gold >= itemgold[7]:
+            vault.append(itemid[7])
+            gold = gold - itemgold[7]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op == 76 and gold >= itemgold[8]:
+            vault.append(itemid[8])
+            gold = gold - itemgold[8]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif op2 == 79 and gold >= itemgold[9]:
+            vault.append(itemid[9])
+            gold = gold - itemgold[9]
+            compra = 0
+            print 'Compra Efetuada com Sucesso'
+            op = 6
+        elif compra == 1:
+            print ' GOLD insuficiente'
+            return 0
+        else:
+            print' Opcao invalida'
+    elif op2 == 4:
+       return 0
+    else:
+        print' Opcao Invalida    '
+
+#def treinadorhab():
+
+
+def cidade():
+    op = 0
+    print ' \n\n\n\n'
+    print ' Ola nobre guerreiro, seja Bem Vindo a Cidade de Dawnstalker'
+    while op != 7:
+        print ' 1 - Inventario'
+        print ' 2 - Treinador de Caracteriticas'
+        print ' 3 - Mestre dos Feiticos'#precisafazer
+        print ' 4 - Vendedor de Armas'#precisafazer
+        print ' 5 - Vendedor de Armaduras'#precisafazer
+        print ' 6 - Ir ao Templo se Curar'
+        print ' 7 - Voltar a Estrada'
+        print ' 8 - Salvar Progresso'
+        op = input(' Digite sua Opcao :   ')
+        if op == 1:
+            inventario()
+        elif op == 2:
+            personagem()
+        #elif op == 3:
+            #treinadorhab()
+        elif op == 4:
+            npcarmas()
+        elif op == 5:
+            npcarmaduras()
+        elif op == 6:
+            curar()
+        elif op == 7:
+            return 0
+        elif op == 8:
+            save()
+        else:
+            print ' Opcao invalida'
+
+
+def savePrincipal ( ):
+    ''' No arquivo cada linha representa um valor, nessa ordem
+        1 - nome = character1
+        2 - hp = 50
+        3 - mana = 30
+        4 - ataque = 10
+        5 - defesa = 3
+        6 - ptlv = 5
+        7 - exp = 0
+        8 - gold = 0
+        9 - lv = 0
+        '''
+    global character1,hp,mana,ataque,defesa,lv,ptlv,exp,gold,hpmax,atkmax
+    f = open('C:\Users\KairoBruno\Documents\save.txt','r')
+    sav = f.readline ()
+    f.close()
+    if len (sav) == 0:
+        print ' Dois anos atras'
+        print '         Uma vila chamada Havic foi atacada por forcas misteriosas que surgiram do alem, houve sangue, caos,'
+        print '         mortes, mas um bravo soldado foi capaz de lutar contra esses seres imortais e gananciosos, como o '
+        print '         unico sobrevivente do seu clan, lhe foi imcubido o dever de lutar contra as trevas e assim ter a '
+        print '         vingaca que almeja desde o dia que viu sua familia morrer em seus bracos'
+        character1=raw_input (' Digite o nome do seu personagem :  ')
+        print '         Esse guerreiro se chamava ',character1,' e assim comecou a sua jornada, atraves dos tempos ele '
+        print '         encontrou pessoas que lhe auxiliaram no dominio da Artes Shungeki(Armas) e nas Artes'
+        print '         Zaosheki(Feiticos).'
+        print '         \nHoje...\n         ',character1,' Finalmente volta ao continente em sua investigacao, mas o mal estava'
+        print '          dominando, agora ele deve vingar seu clan e trazer paz novamente onde um dia foi seu lar!!!'
+        save()
+    else:
+        f = open('C:\Users\KairoBruno\Documents\save.txt','r')
+        character1 = f.readline( )
+        character1 = character1.replace('\n','')
+        hp = int(f.readline())
+        mana = int(f.readline())
+        ataque = int(f.readline())
+        defesa = int(f.readline())
+        ptlv = int(f.readline())
+        exp = int(f.readline())
+        gold = float(f.readline())
+        lv = int(f.readline())
+        hpmax = int(f.readline())
+        atkmax = int(f.readline())
+        manamax = int(f.readline())
+        defesamax = int(f.readline())
+        print character1, ' Voltou para a estrada com os seguintes atributos \nHP MAXIMO = ',hpmax,'\nHP ATUAL =',hp, '\nATAQUE =',ataque,'\nDEFESA =',defesa
+        print 'MANA =',mana,'\nPontos =',ptlv,'\nEXPERIENCIA =',exp,'\nGOLD =',gold,'\nLEVEL =',lv,'\n'
+
+def save ():
+    global hp,mana,ataque,defesa,lv,ptlv,exp,gold,character1,hpmax,atkmax,defesamax
+    shp = str(hp)
+    smana = str(mana)
+    sataque = str(ataque)
+    sdefesa = str(defesa)
+    sptlv = str(ptlv)
+    sexp = str(exp)
+    sgold = str(gold)
+    slv = str(lv)
+    shpmax = str(hpmax)
+    satkmax = str(atkmax)
+    smanamax = str(manamax)
+    sdefesamax = str(defesamax)
+    sav = character1 + '\n' + shp + '\n' + smana + '\n' + sataque + '\n' + sdefesa + '\n' + sptlv + '\n' + sexp
+    sav = sav + '\n' + sgold + '\n' + slv + '\n' + shpmax + '\n' + satkmax + '\n' + smanamax + '\n' + sdefesamax
+    f = open('C:\Users\KairoBruno\Documents\save.txt','w')
+    f.write(sav)
+    print ' Jogo Salvo com Sucesso'
+
+def menu():
+    op = 0
+    while op != 5:
+        print ' 1 - Inventario'
+        print ' 2 = Cidade'
+        print ' 3 = Combate'
+        print ' 4 = Salvar Progresso'
+        print ' 5 = Sair'
+        op=input('Digite uma opcao ')
+        if op == 1:
+            inventario()
+        elif op == 2:
+            cidade()
+        elif op == 3:
+            combate()
+        elif op == 4:
+            save()
+        else:
+            print ' Errrou'
+
+vault=[]
+character1=''
+f = open('C:\Users\KairoBruno\Documents\save.txt','a')
+f.close()
+hp = 50
+hpmax=hp
+mana = 30
+ataque = 10
+defesa = 3
+ptlv = 5
+exp=0
+gold=0
+lv = 0
+defesamax=defesa
+atkmax = ataque
+manamax = mana
+savePrincipal()
+import random
+menu()
