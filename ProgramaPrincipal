@@ -12,48 +12,48 @@
 
 def monstro_flores_inic_facil(repeat):
 
-    monstro_selec=0
+    monstro_selec = 0
     nome=''
     #nos mnstros [NIVEL, VIDA, ATAQUE, DEFESA, EXP, GOLD]
-    cao_selvagem=[ 2, 15, 6, 2, 10, 20]#5
-    serpente=[1, 10, 5, 0, 5, 15]#4
-    lobo_filhote=[ 2, 20, 6, 3, 15, 20]#5
-    lobo=[ 3, 20, 8, 4, 20, 25]#3
-    aranha=[ 2, 15, 4, 1, 8, 20]#5
-    macaco_ancestral=[ 5, 35, 12, 6, 30, 40]#2
-    if repeat==5:
-        nomemonstro='Rei Macaco'
-        return (nomemonstro, macaco_ancestral)
-    monstro_selec=random.randint(1,26)
-    if monstro_selec>=1 and monstro_selec<6:
+    cao_selvagem = [ 2, 15, 6, 2, 10, 20]
+    serpente = [1, 10, 5, 0, 5, 15]
+    lobo_filhote = [ 2, 20, 6, 3, 15, 20]
+    lobo = [ 3, 20, 8, 4, 20, 25]
+    aranha = [ 2, 15, 4, 1, 8, 20]
+    macaco_ancestral = [ 5, 35, 12, 6, 30, 40]
+    if repeat == 5:
+        nomemonstro = 'Rei Macaco'
+        return nomemonstro, macaco_ancestral
+    monstro_selec = random.randint(1,26)
+    if monstro_selec >= 1 and monstro_selec < 6:
         nomemonstro='Cao Selvagem'
-        return (nomemonstro, cao_selvagem)
-    elif monstro_selec>=6 and monstro_selec<10:
+        return nomemonstro, cao_selvagem
+    elif monstro_selec >= 6 and monstro_selec < 10:
         nomemonstro='Serpente'
-        return (nomemonstro ,serpente)
-    elif monstro_selec>=10 and monstro_selec<16:
+        return nomemonstro , serpente
+    elif monstro_selec >= 10 and monstro_selec < 16:
         nomemonstro='Filhote de Lobo'
-        return (nomemonstro ,lobo_filhote)
-    elif monstro_selec>=16 and monstro_selec<20:
-        nomemonstro='Lobo'
-        return (nomemonstro, lobo)
+        return nomemonstro, lobo_filhote
+    elif monstro_selec >= 16 and monstro_selec < 20:
+        nomemonstro = 'Lobo'
+        return nomemonstro, lobo
     else:
-        nomemonstro='Aranha'
+        nomemonstro = 'Aranha'
         return (nomemonstro, aranha)
 def floresta_iniciante():
     import random
-    global hp,mana,ataque,defesa,lv,ptlv,exp,gold,character1
-    op_continuar=1
-    op_iniciar=1
-    atk=0
-    monstro=[]
-    goldwin=0
+    global hp, mana, ataque, defesa, lv, ptlv, exp, gold, character1
+    op_continuar = 1
+    op_iniciar = 1
+    atk = 0
+    monstro = []
+    goldwin = 0
     defm=0
-    nome_monstro=''
-    repeat=0
-    while op_continuar==1:
-        repeat=repeat+1
-        nome_monstro, monstro=monstro_flores_inic_facil(repeat)
+    nome_monstro = ''
+    repeat = 0
+    while op_continuar == 1:
+        repeat = repeat+1
+        nome_monstro, monstro = monstro_flores_inic_facil(repeat)
         if repeat==5:
             print'Voce encontrou o terrivel ', nome_monstro,' ele contem itens bons'
         else:
@@ -106,22 +106,22 @@ def combate():
         op_combate = input ('  Voce entrou no modo de combate, por favor selecione o local onde ira cacar\n')
         if op_combate==1:
             floresta_iniciante()
-        elif op_combate==2:
-            cabana_abandonada()
-        elif op_combate==3:
-            cemiterio_amaldi()
-        elif op_combate==4:
-            deserto_escald()
-        elif op_combate==5:
-            cidade_perdida()
+        #elif op_combate==2:
+            #cabana_abandonada()
+        #elif op_combate==3:
+#cemiterio_amaldi()
+        #elif op_combate==4:
+#deserto_escald()
+        #elif op_combate==5:
+#cidade_perdida()
         elif op_combate==6:
             return 0
         else:
             print 'Opcao Invalida'
 
 def inventario():
-    global vault,character1, gold
-    if len(vault)==0:
+    global vault, character1, gold
+    if len(vault) == 0:
         print '\n\n\n'
         print ' GOLD = ',gold
         print ' Inventario Vazio'
@@ -133,11 +133,11 @@ def inventario():
         for i in range (len(vault)):
             print i+1, ' ', vault[i]
         op_item=input(' Deseja utilizar algum item? 1 = Sim       2 = Nao    ')
-        while 0< op_item >3:
-            if op_item==1:
-                uso_item()
-            else:
-                menu()
+        #while 0< op_item >3:
+            #if op_item==1:
+                #uso_item()
+            #else:
+                #menu()
 def personagem():
     global hp,mana,ataque,defesa,lv,ptlv,exp,gold,character1,hpmax
     print ' Caracteristicas de ', character1
@@ -159,9 +159,9 @@ def personagem():
                 if op_pontos2>ptlv or op_pontos2<0:
                     print  ' Quantidade invalida'
                 else:
-                    hp=hp+op_pontos2*3
-                    hpmax=hp
-                    ptlv=ptlv-op_pontos2
+                    hp = hp+op_pontos2*3
+                    hpmax = hp
+                    ptlv = ptlv-op_pontos2
                     print ' Adicionado com Sucesso '
         elif op_pontos==2:
             if ptlv>0:
@@ -172,20 +172,20 @@ def personagem():
                     mana=mana+op_pontos2*2
                     ptlv=ptlv-op_pontos2
                     print ' Adicionado com Sucesso '
-        elif op_pontos==3:
-            if ptlv>0:
-                op_pontos2=input ('\n Quantos?')
-                if op_pontos2>ptlv or op_pontos2<0:
-                    print  ' Quantidade invalida'
+        elif op_pontos == 3:
+            if ptlv > 0:
+                op_pontos2 = input ('\n Quantos?')
+                if op_pontos2 > ptlv or op_pontos2 < 0:
+                    print' Quantidade invalida'
                 else:
-                    ataque=ataque+op_pontos2
-                    ptlv=ptlv-op_pontos2
+                    ataque = ataque+op_pontos2
+                    ptlv = ptlv-op_pontos2
                     print ' Adicionado com Sucesso\n\n\n '
         elif op_pontos==4:
             if ptlv>0:
                 op_pontos2=input ('\n Quantos?')
                 if op_pontos2>ptlv or op_pontos2<0:
-                    print  ' Quantidade invalida\n'
+                    print' Quantidade invalida\n'
                 else:
                     defesa=defesa+op_pontos2
                     ptlv=ptlv-op_pontos2
@@ -224,123 +224,118 @@ def curar():
             
 def armasfis(id2):
     #ARMA[ ID,NIVEL, DANO, VALORCOMPRA,VALORVENDA]
-    espadacurta=[1, 3,5,200,35]
-    n_espadacurta='Adaga'
-    gladio=[2, 6,8,280,50]
-    n_gladio=' Gladio'
-    katana=[3, 10,13,350,100]
-    n_katana=' Katana'
-    lanca=[4, 14, 17,470,150]
-    n_lanca=' Lanca'
-    machado=[5, 18, 21, 590, 190]
-    n_machado=' Machado'
-    impaladora=[6, 22, 26, 750,250]
-    n_impaladora=' Impaladora de Almas'
-    excalibur=[7, 40, 45, 0, 5000]
-    n_excalibur=' Excalibur'
-    destructor=[8, 40, 50, 0, 6000]
-    n_destructor=' Brasa Destruidora'
-    haviclegend=[9, 40, 55, 0, 7000]
-    n_haviclegend=' Havic Legendaria'
-    dragonreaper=[10, 40, 60, 0, 8000]
-    n_dragonreaper= ' Ceifadora de Dragoes'
-    if id2==1:
-        return (n_espadacurta, espadacurta)
-    elif id2==2:
-        return (n_gladio, gladio)
-    elif id2==3:
-        return (n_katana, katana)
-    elif id2==4:
-        return (n_lanca, lanca)
-    elif id2==5:
-        return (n_machado, machado)
-    elif id2==6:
-        return (n_impaladora, impaladora)
-    elif id2==7:
-        return (n_excalibur, excalibur)
-    elif id2==8:
-        return (n_destructor, destructor)
-    elif id2==9:
-        return (n_haviclegend, haviclegend)
+    espadacurta = [1, 3,5,200,35]
+    n_espadacurta = 'Adaga'
+    gladio = [2, 6,8,280,50]
+    n_gladio = ' Gladio'
+    katana = [3, 10,13,350,100]
+    n_katana = ' Katana'
+    lanca = [4, 14, 17,470,150]
+    n_lanca = ' Lanca'
+    machado = [5, 18, 21, 590, 190]
+    n_machado = ' Machado'
+    impaladora = [6, 22, 26, 750,250]
+    n_impaladora =' Impaladora de Almas'
+    excalibur = [7, 40, 45, 0, 5000]
+    n_excalibur =' Excalibur'
+    destructor = [8, 40, 50, 0, 6000]
+    n_destructor = ' Brasa Destruidora'
+    haviclegend = [9, 40, 55, 0, 7000]
+    n_haviclegend =' Havic Legendaria'
+    dragonreaper = [10, 40, 60, 0, 8000]
+    n_dragonreaper = ' Ceifadora de Dragoes'
+    if id2 == 1:
+        return n_espadacurta, espadacurta
+    elif id2 == 2:
+        return n_gladio, gladio
+    elif id2 == 3:
+        return n_katana, katana
+    elif id2 == 4:
+        return n_lanca, lanca
+    elif id2 == 5:
+        return n_machado, machado
+    elif id2 == 6:
+        return n_impaladora, impaladora
+    elif id2 == 7:
+        return n_excalibur, excalibur
+    elif id2 == 8:
+        return n_destructor, destructor
+    elif id2 == 9:
+        return n_haviclegend, haviclegend
     else:
-        return (n_dragonreaper, dragonreaper)
+        return n_dragonreaper, dragonreaper
 
 def npcarmas():
-    op=0
+
+    op = 0
     global vault, gold
-    op2=0
-    compra==1
-    id2=0
-    n_arma=''
-    arma=[]
-    armaid=[]
-    armagold=[]
-    #ARMA[ ID,NIVEL, DANO, VALORCOMPRA,VALORVENDA]
-    while op!=4:
+    op2 = 0
+    compra = 1
+    id2 = 0
+    n_arma = ''
+    arma = []
+    armaid = []
+    armagold = []
+    '# ARMA[ ID,NIVEL, DANO, VALORCOMPRA, VALORVENDA]'
+    while op != 4:
         print ' Vendedor: Voce acaba de entrar na melhor loja de armas do continente, o que desejas?'
-        op=input (' 1 - Comprar uma Arma Fisica\n 2 - Comprar uma Arma Magica\n 3 - Reforcar uma Arma \n 4 - Sair')
-        if op==1:
+        op = input (' 1 - Comprar uma Arma Fisica\n 2 - Comprar uma Arma Magica\n 3 - Reforcar uma Arma \n 4 - Sair')
+        if op == 1:
             print ' Vendedor: Um guerreiro entao? Tenho a disposicao varias armas, escolha a que desejar'
             for id2 in range(1,7):
                 n_arma, arma=armasfis(id2)
-                print ' Numero: ', arma[0],' -----', n_arma,'---- Nivel: ',arma[1], ' ---- Dano:', arma[2], ' ---- Preco:', arma[3]
+                print ' Numero: ', arma[0], ' -----', n_arma, '---- Nivel: ', arma[1], ' ---- Dano:', arma[2], ' ---- Preco:', arma[3]
                 armaid=arma[0]
                 armagold=arma[3]
-            op2=input(' Qual deseja comprar?\n 6 = Voltar a Cidade')
-            while op2!=6:
-                if op2==0 and gold>=armagold[0]:
+            op2 = input(' Qual deseja comprar?\n 6 = Voltar a Cidade')
+            while op2 != 6:
+                if op2 == 0 and gold >= armagold[0]:
                     vault=armaid[0]
-                    gold= gold - armagold[0]
-                    compra=0
-                elif op2==1 and gold>=armagold[1]:
+                    gold = gold - armagold[0]
+                    compra = 0
+                elif op2 == 1 and gold >= armagold[1]:
                     vault=armaid[1]
-                    gold= gold - armagold[1]
-                    compra=0
-                elif op==2 and gold>=armagold[2]:
-                    vault=armaid[2]
-                    gold= gold - armagold[2]
-                    compra=0
-                elif op2==3 and gold>=armagold[3]:
-                    vault=armaid[3]
-                    gold= gold - armagold[3]
-                    compra=0
-                elif op==4 and gold>=armagold[4]:
-                    vault=armaid[4]
-                    gold= gold - armagold[4]
-                    compra=0
-                elif op2==5 and gold>=armagold[5]:
+                    gold = gold - armagold[1]
+                    compra = 0
+                elif op == 2 and gold >= armagold[2]:
+                    vault = armaid[2]
+                    gold = gold - armagold[2]
+                    compra = 0
+                elif op2 == 3 and gold >= armagold[3]:
+                    vault = armaid[3]
+                    gold = gold - armagold[3]
+                    compra = 0
+                elif op == 4 and gold >= armagold[4]:
+                    vault = armaid[4]
+                    gold = gold - armagold[4]
+                    compra = 0
+                elif op2 == 5 and gold >= armagold[5]:
                     vault=armaid[5]
-                    gold= gold - armagold[5]
-                    compra=0
-                elif op==6:
+                    gold = gold - armagold[5]
+                    compra = 0
+                elif op == 6:
                     return 0
-                elif compra==1:
+                elif compra == 1:
                     print ' GOLD insuficiente'
                     return 0
                 else:
                     print' Opcao invalida'
-        elif op==2:
+        elif op == 2:
             print ' Vendedor: Um mago correto? Tenho diversos artefatos a te oferecer'
-            for id2 in range():
-                n_arma, arma=armasmag(id2)
-
-
-
+            #for id2 in range():
+                #n_arma, arma=armasmag(id2)
 
 #def npcarmaduras():
-
 
 
 #def treinadorhab():
 
 
-
-
 def cidade():
-    op=0
+    op = 0
     print ' \n\n\n\n'
     print ' Ola nobre guerreiro, seja Bem Vindo a Cidade de Dawnstalker'
-    while op!=7:
+    while op != 7:
         print ' 1 - Inventario'
         print ' 2 - Treinador de Caracteriticas'
         print ' 3 - Mestre dos Feiticos'#precisafazer
@@ -348,21 +343,24 @@ def cidade():
         print ' 5 - Vendedor de Armaduras'#precisafazer
         print ' 6 - Ir ao Templo se Curar'
         print ' 7 - Voltar a Estrada'
-        op=input(' Digite sua Opcao ')
-        if op==1:
+        print ' 8 - Salvar Progresso'
+        op = input(' Digite sua Opcao :   ')
+        if op == 1:
             inventario()
-        elif op==2:
+        elif op == 2:
             personagem()
-        elif op==3:
-            treinadorhab()
-        elif op==4:
-            npcarmas(character1)
-        elif op==5:
-            npcarmaduras(character1)
-        elif op==6:
+        #elif op == 3:
+            #treinadorhab()
+        elif op == 4:
+            npcarmas()
+        #elif op==5:
+            #npcarmaduras(character1)
+        elif op == 6:
             curar()
-        elif op==7:
+        elif op == 7:
             return 0
+        elif op == 8:
+            save()
         else:
             print ' Opcao invalida'
 
@@ -380,15 +378,15 @@ def savePrincipal ( ):
         9 - lv = 0 '''
     global character1,hp,mana,ataque,defesa,lv,ptlv,exp,gold
     f = open('C:\Users\KairoBruno\Documents\save.txt','r')
-    sav = f.readline ()
+    sav = f.readline()
     f.close()
-    if len (sav) == 0:
+    if len(sav) == 0:
         print ' Dois anos atras'
         print '         Uma vila chamada Havic foi atacada por forcas misteriosas que surgiram do alem, houve sangue, caos,'
         print '         mortes, mas um bravo soldado foi capaz de lutar contra esses seres imortais e gananciosos, como o '
         print '         unico sobrevivente do seu clan, lhe foi imcubido o dever de lutar contra as trevas e assim ter a '
         print '         vingaca que almeja desde o dia que viu sua familia morrer em seus bracos'
-        character1=raw_input (' Digite o nome do seu personagem :  ')
+        character1 = raw_input(' Digite o nome do seu personagem :  ')
         print '         Esse guerreiro se chamava ',character1,' e assim comecou a sua jornada, atraves dos tempos ele '
         print '         encontrou pessoas que lhe auxiliaram no dominio da Artes Shungeki(Armas) e nas Artes'
         print '         Zaosheki(Feiticos).'
@@ -396,7 +394,7 @@ def savePrincipal ( ):
         print '          dominando, agora ele deve vingar seu clan e trazer paz novamente onde um dia foi seu lar!!!'
         save()
     else:
-        f = open('C:\Users\KairoBruno\Documents\save.txt','r')
+        f = open('C:\Users\KairoBruno\Documents\save.txt', 'r')
         character1 = f.readline( )
         character1 = character1.replace('\n','')
         hp = int(f.readline())
@@ -407,10 +405,12 @@ def savePrincipal ( ):
         exp = int(f.readline())
         gold = int(f.readline())
         lv = int(f.readline())
-        print character1, ' Voltou para a estrada com os seguintes atributos \nHP =',hp, '\nATAQUE =',ataque,'\nDEFESA =',defesa
-        print 'MANA =',mana,'\nPontos =',ptlv,'\nEXPERIENCIA =',exp,'\nGOLD =',gold,'\nLEVEL =',lv,'\n'
+        print character1, ' Voltou para a estrada com os seguintes atributos \nHP =', hp , '\nATAQUE =', ataque
+        print'\nDEFESA = ', defesa
+        print 'MANA =', mana, '\nPontos =', ptlv, '\nEXPERIENCIA = ', exp, '\nGOLD =', gold, '\nLEVEL =', lv, '\n'
 
-def save ():
+
+def save():
     global hp,mana,ataque,defesa,lv,ptlv,exp,gold,character1
     shp = str(hp)
     smana = str(mana)
@@ -421,43 +421,43 @@ def save ():
     sgold = str(gold)
     slv = str(lv)
     sav = character1 + '\n' + shp + '\n' + smana + '\n' + sataque + '\n' + sdefesa + '\n' + sptlv + '\n' + sexp + '\n' + sgold + '\n' + slv
-    f = open('C:\Users\KairoBruno\Documents\save.txt','w')
+    f = open('C:\Users\KairoBruno\Documents\save.txt', 'w')
     f.write(sav)
     print ' Jogo Salvo com Sucesso'
 
 
 def menu():
-    op=0
-    while op !=5:
+    op = 0
+    while op != 5:
         print ' 1 - Inventario'
         print ' 2 = Cidade'
         print ' 3 = Combate'
         print ' 4 = Salvar Progresso'
         print ' 5 = Sair'
         op=input('Digite uma opcao ')
-        if op==1:
+        if op == 1:
             inventario()
-        elif op==2:
+        elif op == 2:
             cidade()
-        elif op==3:
+        elif op == 3:
             combate()
-        elif op==4:
+        elif op == 4:
             save()
         else:
             print ' Errrou'
 
-vault=[]
-character1=''
-f = open('C:\Users\KairoBruno\Documents\save.txt','a')
+vault = []
+character1 = ''
+f = open('C:\Users\KairoBruno\Documents\save.txt', 'a')
 f.close()
 hp = 50
-hpmax=hp
+hpmax = hp
 mana = 30
 ataque = 10
 defesa = 3
 ptlv = 5
-exp=0
-gold=0
+exp = 0
+gold = 0
 lv = 0
 savePrincipal()
 import random
