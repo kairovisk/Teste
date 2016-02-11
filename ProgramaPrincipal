@@ -17,6 +17,8 @@
 
 
 
+
+
 def todositens(id2):
 
 
@@ -787,67 +789,67 @@ def npcarmas():
                 print ' Venda Efetuada com Sucesso'
             elif op2 == 9 in(vault):
                 vault.remove(armaid[8])
-                gold = float(gold + armagold[1])
+                gold = float(gold + armagold[8])
                 print ' Venda Efetuada com Sucesso'
             elif op2 == 10 in(vault):
                 vault.remove(armaid[9])
-                gold = float(gold + armagold[2])
+                gold = float(gold + armagold[9])
                 print ' Venda Efetuada com Sucesso'
             elif op2 == 11 in(vault):
                 vault.remove(armaid[10])
-                gold = float(gold + armagold[3])
+                gold = float(gold + armagold[10])
                 print ' Venda Efetuada com Sucesso'
             elif op2 == 12 in(vault):
                 vault.remove(armaid[11])
-                gold = float(gold + armagold[4])
+                gold = float(gold + armagold[11])
                 print ' Venda Efetuada com Sucesso'
             elif op2 == 13 in(vault):
                 vault.remove(armaid[12])
-                gold = float(gold + armagold[5])
+                gold = float(gold + armagold[12])
                 print ' Venda Efetuada com Sucesso'
             elif op2 == 14 in(vault):
                 vault.remove(armaid[13])
-                gold = float(gold + armagold[6])
+                gold = float(gold + armagold[13])
                 print ' Venda Efetuada com Sucesso'
             elif op2 == 15 in(vault):
                 vault.remove(armaid[14])
-                gold = float(gold + armagold[7])
+                gold = float(gold + armagold[14])
                 print ' Venda Efetuada com Sucesso'
             elif op2 == 16 in(vault):
                 vault.remove(armaid[15])
-                gold = float(gold + armagold[1])
+                gold = float(gold + armagold[15])
                 print ' Venda Efetuada com Sucesso'
             elif op2 == 17 in(vault):
                 vault.remove(armaid[16])
-                gold = float(gold + armagold[2])
+                gold = float(gold + armagold[16])
                 print ' Venda Efetuada com Sucesso'
             elif op2 == 18 in(vault):
                 vault.remove(armaid[17])
-                gold = float(gold + armagold[3])
+                gold = float(gold + armagold[17])
                 print ' Venda Efetuada com Sucesso'
             elif op2 == 19 in(vault):
                 vault.remove(armaid[18])
-                gold = float(gold + armagold[4])
+                gold = float(gold + armagold[18])
                 print ' Venda Efetuada com Sucesso'
             elif op2 == 20 in(vault):
                 vault.remove(armaid[19])
-                gold = float(gold + armagold[5])
+                gold = float(gold + armagold[19])
                 print ' Venda Efetuada com Sucesso'
             elif op2 == 21 in(vault):
                 vault.remove(armaid[20])
-                gold = float(gold + armagold[6])
+                gold = float(gold + armagold[20])
                 print ' Venda Efetuada com Sucesso'
             elif op2 == 22 in(vault):
                 vault.remove(armaid[21])
-                gold = float(gold + armagold[7])
+                gold = float(gold + armagold[21])
                 print ' Venda Efetuada com Sucesso'
             elif op2 == 23 in(vault):
                 vault.remove(armaid[22])
-                gold = float(gold + armagold[1])
+                gold = float(gold + armagold[22])
                 print ' Venda Efetuada com Sucesso'
             elif op2 == 24 in(vault):
                 vault.remove(armaid[23])
-                gold = float(gold + armagold[2])
+                gold = float(gold + armagold[23])
                 print ' Venda Efetuada com Sucesso'
             elif op == 500:
                 return
@@ -995,8 +997,10 @@ def npcarmaduras():
     elmo = []
     itemid = []
     itemgold = []
+    armaid = []
+    armagold = []
     print ' Bem vindo a maior Loja de Armaduras de  Havic'
-    op = input(' 1 = Elmos\n 2 = Armaduras\n 3 = Botas\n 4 = Sair         :')
+    op = input(' ------- COMPRAR --------\n 1 = Elmos\n 2 = Armaduras\n 3 = Botas\n\n 4 = --- VENDER --- \n 5 - Sair  :         :')
     if op == 1:
         for id2 in range(50, 80, 3):
             n_elmo, elmo = elmos(id2)
@@ -1216,7 +1220,148 @@ def npcarmaduras():
             return 0
         else:
             print' Opcao invalida\n\n'
-    elif op2 == 4:
+    elif op == 4:
+            for i in vault:
+                for id2 in range(50, 83):
+                    n_arma, arma = todositens(id2)
+                    if arma[0] == i:
+                        print ' Numero: ', arma[0], '--', n_arma, '-Nivel: ', arma[1], ' - Venda:', arma[4]
+                        armaid.append(arma[0])
+                        armagold.append(arma[4])
+            op2=input (' Qual deseja vender(Numero) ?   500 = Retornar a Cidade    : ')
+            if op2 == 50 in vault:
+                vault.remove(armaid[0])
+                gold = float(gold + armagold[0])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 51 in vault:
+                vault.remove(armaid[1])
+                gold = float(gold + armagold[1])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 52 in vault:
+                vault.remove(armaid[2])
+                gold = float(gold + armagold[2])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 53 in vault:
+                vault.remove(armaid[3])
+                gold = float(gold + armagold[3])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 54 in(vault):
+                vault.remove(armaid[4])
+                gold = float(gold + armagold[4])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 55 in(vault):
+                vault.remove(armaid[5])
+                gold = float(gold + armagold[5])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 56 in(vault):
+                vault.remove(armaid[6])
+                gold = float(gold + armagold[6])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 57 in(vault):
+                vault.remove(armaid[7])
+                gold = float(gold + armagold[7])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 58 in(vault):
+                vault.remove(armaid[8])
+                gold = float(gold + armagold[8])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 59 in(vault):
+                vault.remove(armaid[9])
+                gold = float(gold + armagold[9])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 60 in(vault):
+                vault.remove(armaid[10])
+                gold = float(gold + armagold[10])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 61 in(vault):
+                vault.remove(armaid[11])
+                gold = float(gold + armagold[11])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 62 in(vault):
+                vault.remove(armaid[12])
+                gold = float(gold + armagold[12])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 63 in(vault):
+                vault.remove(armaid[13])
+                gold = float(gold + armagold[13])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 64 in(vault):
+                vault.remove(armaid[14])
+                gold = float(gold + armagold[14])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 65 in(vault):
+                vault.remove(armaid[15])
+                gold = float(gold + armagold[15])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 66 in(vault):
+                vault.remove(armaid[16])
+                gold = float(gold + armagold[16])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 67 in(vault):
+                vault.remove(armaid[17])
+                gold = float(gold + armagold[17])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 68 in(vault):
+                vault.remove(armaid[18])
+                gold = float(gold + armagold[18])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 69 in(vault):
+                vault.remove(armaid[19])
+                gold = float(gold + armagold[19])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 70 in(vault):
+                vault.remove(armaid[20])
+                gold = float(gold + armagold[20])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 71 in(vault):
+                vault.remove(armaid[21])
+                gold = float(gold + armagold[21])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 72 in(vault):
+                vault.remove(armaid[22])
+                gold = float(gold + armagold[22])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 73 in(vault):
+                vault.remove(armaid[23])
+                gold = float(gold + armagold[23])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 74 in(vault):
+                vault.remove(armaid[24])
+                gold = float(gold + armagold[24])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 75 in(vault):
+                vault.remove(armaid[25])
+                gold = float(gold + armagold[25])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 76 in(vault):
+                vault.remove(armaid[26])
+                gold = float(gold + armagold[26])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 77 in(vault):
+                vault.remove(armaid[27])
+                gold = float(gold + armagold[27])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 78 in(vault):
+                vault.remove(armaid[28])
+                gold = float(gold + armagold[28])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 79 in(vault):
+                vault.remove(armaid[29])
+                gold = float(gold + armagold[29])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 80 in(vault):
+                vault.remove(armaid[30])
+                gold = float(gold + armagold[30])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 81 in(vault):
+                vault.remove(armaid[31])
+                gold = float(gold + armagold[31])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 82 in(vault):
+                vault.remove(armaid[32])
+                gold = float(gold + armagold[32])
+                print ' Venda Efetuada com Sucesso'
+    elif op2 == 5:
         return 0
     else:
         print' Opcao Invalida    '
