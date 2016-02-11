@@ -18,10 +18,13 @@
 
 
 
+
+
 def todositens(id2):
 
-    #ARMA[ ID,NIVEL, DANO, VALORCOMPRA,VALORVENDA, HP, MANA, DEFESA]
-    espadacurta = [1, 3,5,200,35, 0, 0, 0,9]
+
+    #ARMA[ ID,NIVEL, DANO, VALORCOMPRA,VALORVENDA, HP, MANA, DEFESA,CLASSIFICACAO]
+    espadacurta = [1, 3, 5, 200, 35, 0, 0, 0, 9]
     n_espadacurta = 'Adaga'
     gladio = [2, 6, 8, 280, 50, 0, 0, 0,9]
     n_gladio = ' Gladio'
@@ -69,8 +72,8 @@ def todositens(id2):
     n_orbehavic = ' Orbe Havic'
     pertudeabis = [24, 26, 30, 1000, 340, 0, 0, 0,9]
     n_pertudeabis = ' Pertubadora de Abismos'
-    
-    #ARMA[ ID,NIVEL, DANO, VALORCOMPRA,VALORVENDA, HP, MANA, DEFESA]
+
+    #ARMA[ ID,NIVEL, DANO, VALORCOMPRA,VALORVENDA, HP, MANA, DEFESA, CLASSIFICACAO]
     e_placaleve = [50, 3, 0, 60, 10, 0, 0, 1,6]
     n_eplacaleve = ' Elmo de Placa Leve'
     a_placaleve = [51, 3, 0, 60, 10, 6, 0, 2,7]
@@ -137,6 +140,7 @@ def todositens(id2):
     n_adraconico = ' Armadura de Osso Draconico'
     b_draconico = [82, 40, 0, 'x', 500, 35, 0, 0,8]
     n_bdraconico = ' Botas de Osso Draconico'
+
 
     if id2 == 1:
         return n_espadacurta, espadacurta
@@ -516,15 +520,15 @@ def curar():
             
 def armasfis(id2):
     #ARMA[ ID,NIVEL, DANO, VALORCOMPRA,VALORVENDA]
-    espadacurta = [1, 3,5,200,35]
+    espadacurta = [1, 3, 5, 200, 35, 0, 0, 0]
     n_espadacurta = ' Adaga'
-    gladio = [2, 6,8,280,50]
+    gladio = [2, 6,8,280,50, 0, 0, 0]
     n_gladio = ' Gladio'
-    katana = [3, 10,13,350,100]
+    katana = [3, 10,13,350,100, 0, 0, 0]
     n_katana = ' Katana'
-    lanca = [4, 14, 17,470,150]
+    lanca = [4, 14, 17,470,150, 0, 0, 0]
     n_lanca = ' Lanca'
-    machado = [5, 18, 21, 590, 190]
+    machado = [5, 18, 21, 590, 190, 0, 0, 0]
     n_machado = ' Machado'
     impaladora = [6, 22, 26, 750,250, 0, 0, 0]
     n_impaladora = ' Impaladora de Almas'
@@ -629,9 +633,9 @@ def npcarmas():
     armaid = []
     armagold = []
     '# ARMA[ ID,NIVEL, DANO, VALORCOMPRA, VALORVENDA]'
-    while op != 4:
+    while op != 5:
         print ' Vendedor: Voce acaba de entrar na melhor loja de armas do continente, o que desejas?'
-        op = input(' 1 - Comprar uma Arma Fisica\n 2 - Comprar uma Arma Magica\n 3 - Reforcar uma Arma \n 4 - Sair   :')
+        op = input(' 1 - Comprar uma Arma Fisica\n 2 - Comprar uma Arma Magica\n 3 - Reforcar uma Arma\n 4 - Vender\n 5 - Sair   :')
         if op == 1:
             print ' Vendedor: Um guerreiro entao? Tenho a disposicao varias armas, escolha a que desejar'
             for id2 in range(1, 9):
@@ -740,6 +744,116 @@ def npcarmas():
             elif compra == 1:
                 print ' GOLD insuficiente'
                 return 0
+            else:
+                print' Opcao invalida'
+        #elif op == 3
+        elif op == 4:
+            for i in vault:
+                for id2 in range(1, 25):
+                    n_arma, arma = armasfis(id2)
+                    if arma[0] == i:
+                        print ' Numero: ', arma[0], '--', n_arma, '-Nivel: ', arma[1], ' - Dano:', arma[2], ' - Venda:', arma[4]
+                        armaid.append(arma[0])
+                        armagold.append(arma[4])
+            op2=input (' Qual deseja vender(Numero) ?   500 = Retornar a Cidade    : ')
+            if op2 == 1 in(vault) :
+                vault.remove(armaid[0])
+                gold = float(gold + armagold[0])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 2 in(vault):
+                vault.remove(armaid[1])
+                gold = float(gold + armagold[1])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 3 in(vault):
+                vault.remove(armaid[2])
+                gold = float(gold + armagold[2])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 4 in(vault):
+                vault.remove(armaid[3])
+                gold = float(gold + armagold[3])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 5 in(vault):
+                vault.remove(armaid[4])
+                gold = float(gold + armagold[4])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 6 in(vault):
+                vault.remove(armaid[5])
+                gold = float(gold + armagold[5])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 7 in(vault):
+                vault.remove(armaid[6])
+                gold = float(gold + armagold[6])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 8 in(vault):
+                vault.remove(armaid[7])
+                gold = float(gold + armagold[7])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 9 in(vault):
+                vault.remove(armaid[8])
+                gold = float(gold + armagold[1])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 10 in(vault):
+                vault.remove(armaid[9])
+                gold = float(gold + armagold[2])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 11 in(vault):
+                vault.remove(armaid[10])
+                gold = float(gold + armagold[3])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 12 in(vault):
+                vault.remove(armaid[11])
+                gold = float(gold + armagold[4])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 13 in(vault):
+                vault.remove(armaid[12])
+                gold = float(gold + armagold[5])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 14 in(vault):
+                vault.remove(armaid[13])
+                gold = float(gold + armagold[6])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 15 in(vault):
+                vault.remove(armaid[14])
+                gold = float(gold + armagold[7])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 16 in(vault):
+                vault.remove(armaid[15])
+                gold = float(gold + armagold[1])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 17 in(vault):
+                vault.remove(armaid[16])
+                gold = float(gold + armagold[2])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 18 in(vault):
+                vault.remove(armaid[17])
+                gold = float(gold + armagold[3])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 19 in(vault):
+                vault.remove(armaid[18])
+                gold = float(gold + armagold[4])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 20 in(vault):
+                vault.remove(armaid[19])
+                gold = float(gold + armagold[5])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 21 in(vault):
+                vault.remove(armaid[20])
+                gold = float(gold + armagold[6])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 22 in(vault):
+                vault.remove(armaid[21])
+                gold = float(gold + armagold[7])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 23 in(vault):
+                vault.remove(armaid[22])
+                gold = float(gold + armagold[1])
+                print ' Venda Efetuada com Sucesso'
+            elif op2 == 24 in(vault):
+                vault.remove(armaid[23])
+                gold = float(gold + armagold[2])
+                print ' Venda Efetuada com Sucesso'
+            elif op == 500:
+                return
             else:
                 print' Opcao invalida'
 
