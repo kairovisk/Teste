@@ -1,14 +1,11 @@
 #modificacoes 06/12/2016(20:13)
-#criacao das funcoes save e savePrincipal
-#criaaoo de objetos e NPC ARMAS (olhar 219 a 280)
-#criado npc armas (263 ate 320)
+#criação de venda no npc de armas
+
 
 #NECESSARIO
-#EM ALGUMAS FUNCOES TEM UM CODIGO ASSIM >> f = open('C:/Users/steferson/Desktop/AtividadesPython/save.txt','r')
-#QUANDO ENCONTRAR ESSE "f.open" MUDE O DIRETORIO PQ FIQUEI COM PREGUICA DE MUDAR TODOS - TENTE USAR O CTRL + F, SEI LA
+#
 
-#OLHAR LINHAS 222, 223 E 224, CRIAR NOVAS FUNCOES PARA CADA UM
-#MONSTROS PARA AS PROXIMAS FASES
+#
 
 
 
