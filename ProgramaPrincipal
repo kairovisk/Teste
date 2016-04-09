@@ -238,7 +238,7 @@ def todositens(id2):
         return n_bdraconico, b_draconico
 
 
-def monstro_flores_inic_facil(repeat):
+def monstro_floresta_inic_facil(repeat):
 
     #nos mnstros [NIVEL, VIDA, ATAQUE, DEFESA, EXP, GOLD]
     cao_selvagem = [2, 15, 6, 2, 10, 20]
@@ -268,7 +268,7 @@ def monstro_flores_inic_facil(repeat):
         return nomemonstro, aranha
 
 
-def floresta_iniciante():
+def combate():
     import random
     global hp, mana, ataque, defesa, lv, ptlv, exp, gold, character1
     op_continuar = 1
@@ -279,18 +279,34 @@ def floresta_iniciante():
     defm=0
     nome_monstro = ''
     repeat = 0
+    op_combate = 0
+    while op_combate != 6:
+        print '\n\n 1 - Floresta do Iniciante\n 2 - Cabana Abandonada\n 3 - Cemiterio Amaldicoado'
+        print ' 4 - Deserto Escaldante\n 5 - Cidade Perdida\n 6 - Cancelar\n '
+        op_combate = input ('  Voce entrou no modo de combate, por favor selecione o local onde ira cacar\n')
+        if op_combate == 6:
+            return 0   
     while op_continuar == 1:
         repeat += 1
-        nome_monstro, monstro = monstro_flores_inic_facil(repeat)
-        if repeat==5:
+        if op_combate == 1:
+            nome_monstro, monstro = monstro_floresta_inic_facil(repeat)
+        #elif op_combate == 2:
+            #nome_monstro, monstro = cabana_abandonada(repeat)
+        #elif op_combate == 3:
+            #nome_monstro, monstro = cemiterio_amaldi(repeat)
+        #elif op_combate == 4:
+            #nome_monstro, monstro = deserto_escald(repeat)
+        #elif op_combate == 5:
+            #nome_monstro, monstro = cidade_perdida(repeat)
+        if repeat == 5:
             print'Voce encontrou o terrivel ', nome_monstro,' ele contem itens bons'
         else:
-            print ' Voce esta andando pela floresta e encontra um(a) ', nome_monstro, ' Nivel ', monstro[0]
+            print ' Voce esta andando e encontra um(a) ', nome_monstro, ' Nivel ', monstro[0]
             print ' O Combate vai comecar!'
             #nos monstros [NIVEL, VIDA, ATAQUE, DEFESA, EXP, GOLD]
         while monstro[1] >0:
             print ' E o seu turno, O que ira fazer? '
-            acao = input(' 1 - Atacar fisicamente\n 2 - Atacar com Magia\n 3 - Se Curar\n      :')
+            acao = input(' 1 - Atacar fisicamente\n 2 - Atacar com Magia\n 3 - Se Curar     :')
             if acao == 1:
                 atk = random.randint(monstro[3],ataque)
                 monstro[1] = monstro[1]-atk
@@ -299,14 +315,24 @@ def floresta_iniciante():
                 print 'Voce deu ',(atk),' de dano, agora', nome_monstro,' possui', monstro[1], ' de vida\n'
                 if monstro[1] > 0:
                     print ' E o turno de', nome_monstro
-                    atk = random.randint(defesa,monstro[2])
-                    hp = hp-atk
-                    print nome_monstro,' Ataca e voce perde', atk,' de vida\n'
-                    if hp <= 0:
-                        print ' Voce morreu, retornando para o Templo\n'
-                        curar()
+                    if defesa < monstro[2]:
+                        atk = random.randint(defesa,monstro[2])
+                        hp = hp-atk
+                        print nome_monstro,' Ataca e voce perde', atk,' de vida\n'
+                        if hp <= 0:
+                            print ' Voce morreu, retornando para o Templo\n'
+                            curar()
 
-                    print ' Voce possui ', hp, ' de vida'
+                        print ' Voce possui ', hp, ' de vida'
+                    else:
+                        atk = 1
+                        hp = hp-atk
+                        print nome_monstro,' Ataca e voce perde', atk,' de vida\n'
+                        if hp <= 0:
+                            print ' Voce morreu, retornando para o Templo\n'
+                            curar()
+
+                        print ' Voce possui ', hp, ' de vida'
         exp += monstro[4]
         atk = monstro[5]
         goldwin = random.randint(1,atk)
@@ -323,28 +349,6 @@ def floresta_iniciante():
         op_continuar = input(' Deseja continuar? \n 1 - SIM\n 2 - NAO      ')
     save()
     return 0
-
-
-def combate():
-    op_combate = 0
-    while op_combate != 6:
-        print '\n\n 1 - Floresta do Iniciante\n 2 - Cabana Abandonada\n 3 - Cemiterio Amaldicoado'
-        print ' 4 - Deserto Escaldante\n 5 - Cidade Perdida\n 6 - Cancelar\n '
-        op_combate = input ('  Voce entrou no modo de combate, por favor selecione o local onde ira cacar\n')
-        if op_combate == 1:
-            floresta_iniciante()
-        #elif op_combate==2:
-            #cabana_abandonada()
-        #elif op_combate==3:
-#cemiterio_amaldi()
-        #elif op_combate==4:
-#deserto_escald()
-        #elif op_combate==5:
-#cidade_perdida()
-        elif op_combate == 6:
-            return 0
-        else:
-            print 'Opcao Invalida'
 
 
 def inventario():
@@ -481,17 +485,22 @@ def curar():
         print ' Sacerdote: Fiat Jadictum per ignem in virtude Michael'
         print ' \n\n Voce foi curado e esta com a vida em 100%'
         print ' Voce perdeu 25% do seu GOLD'
-        porc = gold *0,25
+        porc = (gold *25)//100
         gold = gold-porc
+        print  gold
         cidade()
     op = 0
     while op != 2:
         print ' Avloush Keevar Soldado, o que desejas?'
         op = input( ' 1 - Se Curar(Necessita Gold)\n 2 - Voltar')
         if op == 1:
-            porc = gold/10
-            print ' Para te curar foi necessario', porc,' do seu gold'
-            hp = hpmax
+            porc = gold//10
+            if porc > 0:
+                print ' Para te curar foi necessario', porc,' do seu gold'
+                hp = hpmax
+                gold = gold - porc
+            else:
+                print "Gold insuficiente"
         elif op == 2:
             return 0
         else:
@@ -1479,11 +1488,11 @@ vault = []
 character1 = ''
 f = open('C:\Users\KairoBruno\Documents\save.txt','a')
 f.close()
-hp = 50
+hp = 1
 hpmax = hp
 mana = 30
 ataque = 10
-defesa = 3
+defesa = 50
 ptlv = 5
 exp = 0
 gold = 0
