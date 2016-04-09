@@ -353,11 +353,85 @@ def cemiterio_amaldi(repeat):
 
     
 def deserto_escald():
-    pass
-    
-    
+    #nos mnstros [NIVEL, VIDA, ATAQUE, DEFESA, EXP, GOLD]
+    escorpiao = [13, 65, 26, 20, 39, 65]
+    escaravelho = [13, 65, 26, 18, 39, 65]
+    nomade_feiticeiro = [14, 70, 28, 25, 42, 70]
+    espirito_fogo = [14, 70, 28, 30, 42, 70]
+    grifo = [15, 75, 30, 33, 45, 75]
+    golem_pedra = [15, 75, 30, 40, 45, 75]
+    serpente_duas_cabecas = [16, 80, 32, 35, 48, 80]
+    mumia = [16, 80, 32, 40, 48, 80]
+    farao_infernal = [17, 120, 50, 60, 85, 255]
+    if repeat == 5:
+        nomemonstro = 'Farao Infernal'
+        return nomemonstro, farao_infernal
+    monstro_selec = random.randint(1,40)
+    if 1 <= monstro_selec < 6:
+        nomemonstro = 'Escorpiao'
+        return nomemonstro, escorpiao
+    elif 6 <= monstro_selec < 10:
+        nomemonstro = 'Escaravelho'
+        return nomemonstro, escaravelho
+    elif 10 <= monstro_selec < 16:
+        nomemonstro = 'Nomade Feiticeiro'
+        return nomemonstro, nomade_feiticeiro
+    elif 16 <= monstro_selec < 20:
+        nomemonstro = 'Espirito de Fogo'
+        return nomemonstro, espirito_fogo
+    elif 20 <= monstro_selec < 26:
+        nomemonstro = 'Grifo'
+        return nomemonstro, grifo
+    elif 26 <= monstro_selec < 30:
+        nomemonstro = 'Golem de Pedra'
+        return nomemonstro, golem_pedra
+    elif 36 <= monstro_selec < 40:
+        nomemonstro = 'Serpente de Duas Cabecas'
+        return nomemonstro, serpente_duas_cabecas
+    else:
+        nomemonstro = 'mumia'
+        return nomemonstro, mumia
+
+
 def cidade_perdida():
-    pass
+    #nos mnstros [NIVEL, VIDA, ATAQUE, DEFESA, EXP, GOLD]
+    soldado_anao = [18, 108, 36, 40, 53, 90]
+    anao = [17, 102, 34, 40, 51, 85]
+    elfo = [17, 102, 34, 40, 51, 85]
+    elfo_arqueiro = [18, 108, 36, 43, 53, 90]
+    anao_guardiao = [19, 114, 38, 45, 55, 95]
+    elfo_templario = [19, 114, 38, 45, 55, 95]
+    lobo_guerra = [20, 120, 40, 48, 57, 100]
+    anao_ferreiro = [20, 120, 40, 48, 57, 100]
+    senhor_imperial = [21, 200, 63, 90, 105, 300]
+    if repeat == 5:
+        nomemonstro = 'Senhor Imperial'
+        return nomemonstro, senhor_imperial
+    monstro_selec = random.randint(1,40)
+    if 1 <= monstro_selec < 6:
+        nomemonstro = 'Anao'
+        return nomemonstro, anao
+    elif 6 <= monstro_selec < 10:
+        nomemonstro = 'Elfo'
+        return nomemonstro, elfo
+    elif 10 <= monstro_selec < 16:
+        nomemonstro = 'Elfo Arqueiro'
+        return nomemonstro, elfo_arqueiro
+    elif 16 <= monstro_selec < 20:
+        nomemonstro = 'Anao Guardiao'
+        return nomemonstro, anao_guardiao
+    elif 20 <= monstro_selec < 26:
+        nomemonstro = 'Elfo Templario'
+        return nomemonstro, elfo_templario
+    elif 26 <= monstro_selec < 30:
+        nomemonstro = 'Lobo de Guerra'
+        return nomemonstro, lobo_guerra
+    elif 36 <= monstro_selec < 40:
+        nomemonstro = 'Anao Ferreiro'
+        return nomemonstro, anao_ferreiro
+    else:
+        nomemonstro = 'Soldado Anao'
+        return nomemonstro, soldado_anao
 
     
 def combate():
