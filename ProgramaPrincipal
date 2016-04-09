@@ -268,12 +268,88 @@ def monstro_floresta_inic_facil(repeat):
         return nomemonstro, aranha
 
 
-def cabana_abandonada():
-    pass
-    
-    
-def cemiterio_amaldi():
-    pass
+def cabana_abandonada(repeat):
+
+    #nos mnstros [NIVEL, VIDA, ATAQUE, DEFESA, EXP, GOLD]
+    ladrao = [5, 25, 8, 7, 15, 25]
+    saqueador = [6, 28, 10, 10, 18, 30]
+    lutador = [6, 28, 6, 10, 18, 30]
+    contrabandista = [7, 32, 12, 13, 20, 35]
+    pistoleiro = [7, 32, 12, 13, 21, 35]
+    observador = [8, 25, 15, 16, 24, 40]
+    foragido = [5, 25, 8, 7, 15, 25]
+    assasino = [8, 35, 16, 16, 24, 40]
+    lider_mercenario = [10, 70, 25, 21, 50, 150]
+    if repeat == 7:
+        nomemonstro = 'Lider Mercenario'
+        return nomemonstro, lider_mercenario
+    monstro_selec = random.randint(1,38)
+    if 1 <= monstro_selec < 6:
+        nomemonstro = 'Ladrao'
+        return nomemonstro, ladrao
+    elif 6 <= monstro_selec < 10:
+        nomemonstro = 'Saqueador'
+        return nomemonstro, saqueador
+    elif 10 <= monstro_selec < 16:
+        nomemonstro = 'Lutador'
+        return nomemonstro, lutador
+    elif 16 <= monstro_selec < 20:
+        nomemonstro = 'Contrabandista'
+        return nomemonstro, contrabandista
+    elif 20 <= monstro_selec < 24:
+        nomemonstro = 'pistoleiro'
+        return nomemonstro, pistoleiro
+    elif 24 <= monstro_selec < 28:
+        nomemonstro = 'observador'
+        return nomemonstro, observador
+    elif 28 <= monstro_selec < 32:
+        nomemonstro = 'foragido'
+        return nomemonstro, foragido
+    else:
+        nomemonstro = 'Assasino'
+        return nomemonstro, assasino
+
+
+def cemiterio_amaldi(repeat):
+
+    #nos mnstros [NIVEL, VIDA, ATAQUE, DEFESA, EXP, GOLD]
+    fantasma = [9, 54, 18, 19, 27, 45]
+    ghoul = [9, 54, 18, 19, 27, 45]
+    zumbi = [10, 60, 20, 22, 30, 50]
+    espirito_perverso = [10, 60, 20, 22, 30, 50]
+    vampiro = [11, 66, 22, 25, 33, 55]
+    poltergeist = [11, 66, 25, 10, 33, 55]
+    esqueleto = [12, 72, 24, 28, 36, 60]
+    espectro = [12, 72, 16, 28, 36, 60]
+    senhor_das_almas = [14, 98, 35, 30, 70, 210]
+    if repeat == 7:
+        nomemonstro = 'Senhor das Almas'
+        return nomemonstro, senhor_das_almas
+    monstro_selec = random.randint(1,38)
+    if 1 <= monstro_selec < 6:
+        nomemonstro = 'Fantasma'
+        return nomemonstro, fantasma
+    elif 6 <= monstro_selec < 10:
+        nomemonstro = 'Ghoul'
+        return nomemonstro, ghoul
+    elif 10 <= monstro_selec < 16:
+        nomemonstro = 'Zumbi'
+        return nomemonstro, zumbi
+    elif 16 <= monstro_selec < 20:
+        nomemonstro = 'Espirito Perverso'
+        return nomemonstro, espirito_perverso
+    elif 20 <= monstro_selec < 24:
+        nomemonstro = 'Vampiro'
+        return nomemonstro, vampiro
+    elif 24 <= monstro_selec < 28:
+        nomemonstro = 'Poltergeist'
+        return nomemonstro, poltergeist
+    elif 28 <= monstro_selec < 32:
+        nomemonstro = 'Esqueleto'
+        return nomemonstro, esqueleto
+    else:
+        nomemonstro = 'Espectro'
+        return nomemonstro, espectro
 
     
 def deserto_escald():
